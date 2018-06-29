@@ -11,15 +11,18 @@
 
     <div id="app">
         <h1>{{msg}}</h1>
+        <h3>{{content}}</h3>
     </div>
 
     <script>
-        var vm = new Vue({
+        const vm = new Vue({
             el: '#app',
             data: {
                 msg: 'Hello Vue',
+                content: 'this is vue demo'
             }
         });
+        console.log(vm);
     </script>
 </body>
 </html>
