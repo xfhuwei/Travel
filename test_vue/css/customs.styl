@@ -1,0 +1,869 @@
+@import "reset.css"
+@import "scorllbar"
+
+//定义一个变量和一个mixin
+$baseFontSize = 100; //默认基准font-size
+pr(pxNum) {
+  (pxNum / $baseFontSize) * 1rem;
+}
+
+// 清除浮动影响函数
+clearFloat() {
+  &:after {
+    display block
+    content ''
+    clear both
+  }
+}
+
+// 文字溢出处理
+textOverflow() {
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+}
+
+// 通用背景
+bgfunction() {
+  position fixed
+  width 100%
+  height 100%
+  top 0
+  left 0
+  z-index -1
+  img {
+    width 100%
+    height 100%
+  }
+}
+
+// 通用头部
+henderFn() {
+  text-align center
+  font-size pr(50)
+  color #55E5ED
+  padding-top pr(60)
+}
+
+body, html {
+  height 100%
+  weight 100%
+  color #ffffff
+}
+
+// 海关舱单页面开始
+.customsManifest_box {
+  width 100%
+  height 100%
+  position relative
+  overflow auto
+  .background {
+    bgfunction()
+  }
+
+  .header {
+    henderFn()
+  }
+
+  .banner {
+    margin-top pr(70)
+    padding: 0 pr(120)
+    clearFloat()
+    > p {
+      float left
+      width (100 / 6) %
+      font-size pr(30)
+      margin-bottom: pr(30)
+      box-sizing border-box
+      padding-right: pr(20)
+      textOverflow()
+      &.x2 {
+        width 2 * (100 / 6) %
+        label {
+          margin-left: 50%
+          width pr(250 * 2)
+          position relative
+          left pr(-250 + 10)
+        }
+        span {
+          position relative
+          left pr(-250 + 10)
+        }
+      }
+      label {
+        display inline-block
+        width pr(250)
+        text-align right
+        color #55E5ED
+        margin-right: pr(10)
+      }
+    }
+  }
+
+  .table {
+    padding pr(10) pr(120)
+    ul {
+      li {
+        clearFloat()
+        span {
+          float left
+          line-height: pr(70)
+          height pr(70)
+          font-size: pr(30)
+          text-align: center
+          box-sizing: border-box
+          padding: 0 pr(10)
+          textOverflow()
+          width (61 / 9) % // 共 12 项
+          &:nth-child(1),
+          &:nth-child(11),
+          &:nth-child(12) {
+            width 13%
+          }
+        }
+      }
+    }
+    .thead {
+      color #55E5ED
+      li {
+        background: url('../imgs/cus_02.png') no-repeat
+        background-size: 100% 100%
+      }
+    }
+    .tbody {
+      height pr(16 * 70)
+      overflow-y auto
+      li {
+        background: url('../imgs/cus_03.png') no-repeat
+        background-size: 100% 100%
+        cursor pointer
+        &:nth-child(even) {
+          background-image: url('../imgs/cus_04.png')
+        }
+        &:hover {
+          background-image: url('../imgs/cus_05.png')
+        }
+      }
+    }
+  }
+
+  .footer {
+    font-size: pr(30)
+    padding pr(10) pr(120)
+    margin-top: pr(90)
+    p {
+      float left
+      margin-right: pr(30)
+      label {
+        color #55E5ED
+      }
+    }
+  }
+
+  .model_bigbox {
+    position: fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background: rgba(0, 0, 0, .5)
+    .detail_box {
+      position absolute
+      top 50%
+      left 50%
+      margin-left: pr(-2800 / 2)
+      margin-top: pr(-1600 / 2)
+      width pr(2800)
+      height pr(1600)
+      background: url("../imgs/cus_06.png") no-repeat
+      background-size: 100% 100%
+      box-sizing: border-box
+      padding: 0 pr(130)
+
+      .close {
+        position: absolute
+        top: pr(10)
+        right: pr(14)
+        width pr(58*1.4)
+        height pr(45*1.4)
+        background: url("../imgs/cus_08.png") no-repeat
+        background-size: 100% 100%;
+        cursor: pointer
+      }
+
+      .detail_header {
+        margin-bottom: pr(8)
+        .title {
+          font-size: pr(45)
+          color #55e5ed
+          text-align center
+          padding-top: pr(60)
+        }
+        .top_row {
+          clearFloat()
+          font-size: pr(30)
+          margin-top: pr(80)
+          margin-left: pr(5)
+          padding-bottom: pr(10)
+          p {
+            float left
+            margin-right: pr(20)
+            label {
+              color #55e5ed
+            }
+          }
+        }
+      }
+
+      .detail_content {
+        height pr(1160)
+        overflow-y: auto
+        .tags {
+          font-size: pr(36)
+          border-bottom: pr(2) solid #1C91F5
+          a {
+            color #667C8E
+            display inline-block
+            padding: pr(12) pr(30)
+            &:not(.active) {
+              cursor pointer
+            }
+            &.active {
+              color #ffffff
+              font-weight: bold
+              position: relative
+              &:after {
+                content: ''
+                width 100%
+                height pr(8)
+                background: url('../imgs/cus_07.png') no-repeat
+                background-size: 100% 100%
+                position: absolute
+                bottom 0
+                left 0
+              }
+            }
+          }
+        }
+        .list {
+          margin-top: pr(8)
+          border-top pr(1) solid #16BAFF
+          border-left pr(1) solid #16BAFF
+          clearFloat()
+          p {
+            float: left
+            width (100 / 3) %
+            font-size: pr(30)
+            border-bottom pr(1) solid #16BAFF
+            border-right pr(1) solid #16BAFF
+            box-sizing: border-box
+            line-height: pr(70)
+            textOverflow()
+            label {
+              width pr(270)
+              border-right pr(1) solid #16BAFF
+              display: inline-block
+              background: #0B3670
+              color #55e5ed
+            }
+          }
+        }
+        .detail_table {
+          margin-top: pr(20)
+          border-top pr(1) solid #16BAFF
+          border-left pr(1) solid #16BAFF
+          p {
+            clearFloat()
+            font-size: pr(30)
+            &.thead {
+              span {
+                background: #0B3670
+                color #55e5ed
+              }
+            }
+            span {
+              textOverflow()
+              float: left
+              width (100 / 13) %
+              border-bottom pr(1) solid #16BAFF
+              border-right pr(1) solid #16BAFF
+              box-sizing: border-box
+              line-height: pr(82)
+              height pr(82)
+              text-align: center
+            }
+          }
+        }
+        .boxs_detail {
+          .tags a {
+            padding: pr(12) pr(2)
+          }
+          .detail_table p span {
+            width (82 / 12) %
+            &:nth-child(2),
+            &:nth-child(5) {
+              width 9%
+            }
+          }
+        }
+        .works_detail {
+          .detail_table p span {
+            width (100 / 10) %
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+
+// 集装箱详细信息
+.bizOperation_box {
+  width 100%
+  height 100%
+  position relative
+  overflow auto
+  .background {
+    bgfunction()
+  }
+
+  .header {
+    henderFn()
+  }
+
+  .main {
+    margin: pr(30) pr(56)
+    padding-bottom pr(20)
+    clearFloat()
+
+    .left_box {
+      float: left;
+      width: 33%
+      box-sizing: border-box;
+      .baseInfo {
+        border: 1px solid #0E4C8E;
+        border-radius: pr(8)
+        .title {
+          color: #4DD3DD;
+          font-size: pr(36);
+          padding-left: pr(40);
+          background: #011238;
+          border-top-left-radius: pr(8)
+          border-top-right-radius: pr(8)
+          line-height: pr(72)
+          border-bottom: 1px solid #052959;
+          span {
+            &:before {
+              content ''
+              display inline-block
+              width pr(36)
+              height pr(36)
+              background url('../imgs/bo_icon2.png') no-repeat 0 0
+              background-size contain
+              vertical-align sub
+              position relative
+              top pr(-2)
+              margin-right pr(10)
+            }
+          }
+
+        }
+        .conter {
+          color: #fff;
+          font-size: pr(30);
+          background-color rgba(4, 42, 119, .4)
+          ul {
+            padding-bottom pr(20)
+            clearFloat()
+            li {
+              float: left;
+              width: 50%;
+              textOverflow()
+              box-sizing border-box
+              margin-top pr(20)
+              &:nth-child(2n) {
+                padding-left pr(10)
+              }
+              span:nth-child(1) {
+                color: #4DD3DD;
+                width pr(200)
+                display inline-block
+                text-align right
+              }
+            }
+          }
+        }
+      }
+      .highInfo {
+        background-color rgba(4, 42, 119, .4)
+        border: 1px solid #0E4C8E;
+        border-radius: pr(8);
+        margin-top pr(20)
+        .title {
+          color: #667C8E;
+          padding-left: pr(40);
+          background: #011238;
+          border-top-left-radius: pr(8);
+          border-top-right-radius: pr(8)
+          border-bottom: 1px solid #052959;
+          line-height: pr(72)
+          span {
+            font-size: pr(36)
+            margin-right pr(20)
+            cursor pointer
+            &:before {
+              content ''
+              display inline-block
+              width pr(36)
+              height pr(36)
+              background url('../imgs/bo_icon4_0.png') no-repeat 0 0
+              background-size contain
+              vertical-align sub
+              margin-right pr(15)
+              position relative
+              top pr(-2)
+            }
+            &:nth-child(2) {
+              &:before {
+                background-image: url('../imgs/bo_icon3_0.png')
+              }
+            }
+            &.active {
+              color: #4DD3DD;
+              position relative
+              &:after {
+                content ''
+                position absolute
+                bottom pr(-15)
+                left 0
+                width 100%
+                height pr(4)
+                background #4DD3DD
+              }
+              &:before {
+                background-image: url('../imgs/bo_icon4.png')
+              }
+              &:nth-child(2) {
+                &:before {
+                  background-image: url('../imgs/bo_icon3.png')
+                }
+              }
+            }
+          }
+        }
+
+        .conter {
+          #state {
+            padding 0 pr(34)
+            padding-top pr(20)
+            .danhao {
+              &:not(:first-child) {
+                border-top: 1px solid #0e4c8e
+                margin-top pr(10)
+              }
+              &:last-child {
+                padding-bottom pr(20)
+              }
+              > p {
+                font-size pr(30)
+                color: #4dd3dd;
+                padding-bottom pr(10)
+                padding-top pr(15)
+                span {
+                  color #ff9700
+                  float right
+                  font-size pr(30)
+                  padding-top pr(5)
+                }
+              }
+              > div {
+                clearFloat()
+                a {
+                  background #0A3D7C
+                  line-height pr(54)
+                  border-radius: pr(4)
+                  cursor pointer
+                  color #fff
+                  font-size pr(30)
+                  width 32.5%
+                  float left
+                  box-sizing border-box
+                  text-align center
+                  margin-bottom 1.25%
+                  Overflow()
+                  &:not(:nth-child(3n)) {
+                    margin-right 1.25%
+                  }
+                  &:hover, &.active {
+                    background #1B91F5
+                  }
+                }
+              }
+            }
+          }
+          #locus {
+            ul {
+              li {
+                font-size: pr(30)
+                line-height pr(150)
+                cursor pointer
+                &:last-child b:after {
+                  display none
+                }
+                span:nth-child(1) {
+                  color: #ff9700
+                  width pr(350)
+                  display inline-block
+                  margin-left pr(80)
+                  margin-right pr(20)
+                }
+                span:nth-child(3) {
+                  color: #66c5fd
+                  margin-left pr(30)
+                }
+                b {
+                  width pr(22)
+                  height pr(22)
+                  border: pr(6) solid #1fc3ff
+                  border-radius 50%
+                  display inline-block
+                  background #046DEE
+                  position relative
+                  &:after {
+                    content ''
+                    position absolute
+                    top: 100%
+                    left 39%
+                    width  pr(5)
+                    height  pr(125)
+                    background #1fc3ff
+                  }
+                }
+                &.active {
+                  background url("../imgs/bo_wzbg.png") no-repeat
+                  background-size contain
+                  background-position center
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    .right_box {
+      float: right;
+      width 66.5%
+
+      #state-main {
+        border: 1px solid #0E4C8E;
+        border-radius: pr(8)
+        background-color rgba(4, 42, 119, .4)
+        .title {
+          color: #4DD3DD;
+          font-size: pr(36)
+          padding-left:  pr(40)
+          background: #011238;
+          border-top-left-radius: pr(8)
+          border-top-right-radius: pr(8)
+          line-height:  pr(70)
+          border-bottom: 1px solid #052959;
+          &:before {
+            content ''
+            display inline-block
+            width  pr(36)
+            height  pr(36)
+            background url('../imgs/bo_icon5.png') no-repeat 0 0
+            background-size contain
+            vertical-align sub
+            margin-right  pr(10)
+            position relative
+            top pr(-3)
+          }
+        }
+        .conter {
+          position relative
+          height 100%
+          box-sizing border-box
+          max-height pr(1800)
+          overflow auto
+         /* ul {
+            margin pr(100)
+            border-bottom 1px solid #1295D8
+            border-left 1px solid #1295D8
+            clearFloat()
+            li {
+              float left
+              font-size pr(30)
+              color #fff
+              border-top 1px solid #1295D8
+              border-right 1px solid #1295D8
+              position relative
+              line-height pr(170)
+              box-sizing border-box
+              height pr(170)
+              > span {
+                border-right 1px solid #1295D8
+                display inline-block
+                line-height pr(170)
+                box-sizing border-box
+                padding-left pr(15)
+                color #4dd3dd
+                background rgba(64, 143, 195, .2)
+                position absolute
+                top 0
+                left 0
+                width pr(230)
+              }
+              > p {
+                margin-left pr(230)
+                padding-left pr(20)
+                box-sizing border-box
+                Overflow()
+              }
+            }
+          }
+          .baoguan_xq ul {
+            li {
+              &:nth-child(1) {
+                width 100%
+              }
+              &:nth-child(2), &:nth-child(6), &:nth-child(9), &:nth-child(12), &:nth-child(15), &:nth-child(18) {
+                width 33%
+              }
+              &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+                width 22.333%
+              }
+              &:nth-child(7), &:nth-child(8), &:nth-child(10), &:nth-child(11), &:nth-child(13), &:nth-child(14), &:nth-child(16), &:nth-child(17), &:nth-child(19), &:nth-child(20) {
+                width 33.5%
+              }
+
+              &:nth-child(21), &:nth-child(22), &:nth-child(23), &:nth-child(24) {
+                width 25%
+              }
+              &:nth-child(25), &:nth-child(26), &:nth-child(27) {
+                width 33.33%
+              }
+              //&:nth-child(28), &:nth-child(29){
+              //  width 50%
+              //}
+            }
+          }
+          .cangdan_xq ul {
+            li {
+              width 33.33%
+            }
+          }
+          .chayan_xq ul {
+            li {
+              width 25%
+            }
+          }*/
+          >div {
+            font-size pr(30)
+            margin pr(100)
+            border-bottom 1px solid #16BAFF
+            border-left 1px solid #16BAFF
+            clearFloat()
+            >p {
+              position relative
+              height pr(176)
+              box-sizing border-box
+              float left
+              width 25%
+              border-top 1px solid #16BAFF
+              border-right 1px solid #16BAFF
+              clearFloat()
+              label {
+                color #55e5ed
+                position absolute
+                top 0
+                left 0
+                height: 100%
+                border-right 1px solid #16BAFF
+                background #0B3670
+                width pr(234)
+                box-sizing border-box
+                padding-left pr(15)
+                display flex
+                flex-direction: row;  /* 子元素横向排列 */
+                //justify-content: center; /* 相对父元素水平居中 */
+                align-items: center; /*  子元素相对父元素垂直居中 */
+              }
+              span {
+                margin-left pr(234)
+                display flex
+                height 100%
+                padding 0 pr(10)
+                flex-direction: row;  /* 子元素横向排列 */
+                //justify-content: center; /* 相对父元素水平居中 */
+                align-items: center; /*  子元素相对父元素垂直居中 */
+                // html中超出盒子宽度会自动换行的，不用设置，
+                // 如果你连续的英文之间没用空格，那么它会以为是一个单词，就不会换行
+                word-break: break-all;
+                word-wrap: break-word;
+              }
+
+            }
+            >ul {
+              float left
+              width 100%
+              li {
+                border-top 1px solid #16BAFF
+                border-right 1px solid #16BAFF
+                clearFloat()
+                span {
+                  float left
+                  padding pr(10)
+                  box-sizing border-box
+                  word-break: break-all;
+                  word-wrap: break-word;
+                  height pr(66 * 2)
+                  display flex
+                  flex-direction: row;  /* 子元素横向排列 */
+                  //justify-content: center; /* 相对父元素水平居中 */
+                  align-items: center; /*  子元素相对父元素垂直居中 */
+                }
+                &.thead {
+                  background #0B3670
+                  color #55e5ed
+                  span {
+                    height pr(66)
+                  }
+                }
+              }
+            }
+          }
+
+          .baoguan_xq {
+            >p {
+              &:nth-child(1), &:nth-child(2)
+              { width: (100/2)% }
+              &:nth-child(3),
+              &:nth-child(7), &:nth-child(8), &:nth-child(9),
+              &:nth-child(10), &:nth-child(11), &:nth-child(12),
+              &:nth-child(13), &:nth-child(14), &:nth-child(15)
+              { width: (100/3)% }
+              &:nth-child(4), &:nth-child(5), &:nth-child(6)
+              { width: (100/3 * 2 / 3)% }
+
+              &:nth-child(29) { width: (100/4 * 2)% }
+              &:nth-child(31) { width: 100% }
+
+              &:nth-child(4),&:nth-child(5),&:nth-child(6),
+              &:nth-child(8),&:nth-child(11),&:nth-child(14),
+              &:nth-child(17),&:nth-child(21),&:nth-child(25),&:nth-child(29)
+              {
+                label { width: pr(158) }
+                span { margin-left: pr(158) }
+              }
+              &:nth-child(17) label {
+                justify-content: center;
+              }
+            }
+            >ul {
+              li {
+                span {
+                  width (80/8)%
+                  &:nth-child(1) { width: 5% }
+                  &:nth-child(3) { width: 15% }
+                }
+              }
+            }
+            .tips {
+              position absolute
+              width 100%
+              bottom pr(-60)
+              left pr(100)
+              color #FF9700
+            }
+          }
+
+          .chayan_xq {
+            >p {
+              &:nth-child(1), &:nth-child(2), &:nth-child(17), &:nth-child(28),
+              &:nth-child(38), &:nth-child(39), &:nth-child(44), &:nth-child(45),
+              &:nth-child(51), &:nth-child(52), &:nth-child(53), &:nth-child(54),
+              &:nth-child(55), &:nth-child(56)
+              { width: (100/2)% }
+              &:nth-child(29) { width: (100/4 *3)% }
+              &:nth-child(37),&:nth-child(46) { width: 100% }
+              &:nth-child(29),&:nth-child(30) {
+                height pr(200)
+              }
+            }
+            >ul {
+              &.u1 li span { width: (100/6)% }
+              &.u2 li span { width: (100/7)% }
+              li {
+                span {
+                  height: pr(66 * 2.5)
+                }
+              }
+            }
+          }
+
+
+
+        }
+      }
+      #locus-main {
+        border: 1px solid #0E4C8E;
+        border-radius: pr(8);
+        background-color rgba(4, 42, 119, .4)
+        height 100%
+        box-sizing border-box
+        .title {
+          color: #4DD3DD;
+          font-size: pr(36);
+          padding-left: pr(40);
+          background: #011238;
+          border-top-left-radius: pr(8)
+          border-top-right-radius: pr(8)
+          line-height: pr(70)
+          border-bottom: 1px solid #052959;
+          &:before {
+            content ''
+            display inline-block
+            width pr(36)
+            height pr(36)
+            background url('../imgs/bo_icon1.png') no-repeat 0 0
+            background-size contain
+            vertical-align sub
+            position relative
+            margin-right pr(10)
+            top pr(-2)
+          }
+        }
+        .conter {
+          > div {
+            width 100%
+            box-sizing border-box
+            padding pr(120) 4%
+            position relative
+            > img {
+              width 100%
+              position relative
+              z-index 1
+            }
+            > div {
+              width 100%
+              height 100%
+              position absolute
+              z-index 1
+              top 0
+              left 0
+              padding pr(120) 4%
+              box-sizing border-box
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}

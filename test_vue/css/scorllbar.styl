@@ -1,0 +1,23 @@
+/* 设置谷歌浏览器下滚动条的样式 */
+$size = .2rem /* 20/100 */
+::-webkit-scrollbar {
+  width: $size
+  height: $size
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: $size
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: $size
+  background-color: rgba(22, 185, 254, .7);
+  -webkit-border-radius: $size
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: $size
+  background-color: rgba(22, 185, 254, .7);
+  -webkit-border-radius: $size
+}

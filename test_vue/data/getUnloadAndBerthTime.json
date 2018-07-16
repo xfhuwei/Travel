@@ -1,0 +1,10 @@
+{
+  "code":0,
+  "msg": "success",
+  "data": {
+    "releasedTime":"2018-01-11",
+    "unloadTime":"2018-01-11",
+    "berthTime":"2018-01-11",
+    "imVoyage":"100xc"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "code": 0,
+  "msg": "success",
+  "data": [
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    },
+    {
+      "shipVisitNo": "wer345ts",
+      "billNo": "BJL769880",
+      "ieMark": "I",
+      "tradeMark": "F",
+      "cargoDescribe": "卡纸",
+      "insAccount": "SP02",
+      "insTimestamp": "2018-02-01",
+      "updAccount": "SP02",
+      "updTimestamp": "2018-02-01"
+    }
+  ]
+}

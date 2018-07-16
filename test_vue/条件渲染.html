@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>条件渲染</title>
+  <script src="js/vue-2.5.16.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <template v-if="loginType === 'username'">
+      <label>Username</label>
+      <!-- 加 key 让input变唯一不复用 -->
+      <input placeholder="Enter your username" key="username-input">
+    </template>
+    <template v-else>
+      <label>Email</label>
+      <input placeholder="Enter your email" key="email-input">
+    </template>
+    <br>
+    <button @click="handleClick">toggle login type</button>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        loginType: 'username'
+      },
+      methods: {
+        handleClick: function () {
+          this.loginType = this.loginType === 'username' ? 'email' : 'username'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

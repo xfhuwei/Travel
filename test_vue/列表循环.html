@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>列表循环</title>
+  <script src="js/vue-2.5.16.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ol v-if="todos.length">
+      <li v-for="todo of todos" v-if="todo.isComplete" :key="todo.id">
+        {{ todo.text }}
+      </li>
+    </ol>
+    <p v-else>todos is undefined</p>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        todos: [
+          { id: 0, text: '苹果', isComplete: true },
+          { id: 1, text: '雪梨', isComplete: true },
+          { id: 2, text: '香蕉', isComplete: true },
+          { id: 3, text: '不显示', isComplete: false },
+        ]
+      }
+    })
+  </script>
+
+  <hr>
+
+  <div id="todo-list-example">
+    <label>添加列表项：</label>
+    <input type="text" v-model="newTodoText">
+    <button @click="addNewTodo">添加</button>
+    <ul>
+      <li
+        is="todo-item"
+        v-for="(todo, index) of todos"
+        :key="todo.id"
+        :title="todo.title"
+        @remove="remove(index)"
+      ></li>
+    </ul>
+  </div>
+  <script>
+    Vue.component('todo-item', {
+      props: ['title'],
+      template: `
+        <li>
+          {{ title }}
+          <button @click="$emit('remove')">删除</button>
+        </li>
+      `
+    })
+    var vm = new Vue({
+      el: '#todo-list-example',
+      data: {
+        newTodoText: '',
+        todos: [
+          { id: 1, title: 'Do the dishes' },
+          { id: 2, title: 'Take out the trash' },
+          { id: 3, title: 'Mow the lawn' }
+        ],
+        nextTodoId: 4
+      },
+      methods: {
+        addNewTodo: function () {
+          this.todos.push({
+            id: this.nextTodoId ++,
+            title: this.newTodoText
+          })
+          this.newTodoText = ''
+        },
+        remove: function (index) {
+          this.todos.splice(index, 1)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
