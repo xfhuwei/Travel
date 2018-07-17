@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <img src="../assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -80,6 +81,9 @@
         </a>
       </li>
     </ul>
+    <h3>
+      <router-link to="/Test">golink</router-link>
+    </h3>
   </div>
 </template>
 
@@ -109,5 +113,8 @@ li {
 }
 a {
   color: #42b983;
+}
+h3 {
+  text-align: center;
 }
 </style>
