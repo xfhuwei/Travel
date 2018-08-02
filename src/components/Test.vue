@@ -74,13 +74,13 @@ export default {
           setTimeout(() => {
             this.message = this.inputArr[this.showI]
             this.isShow = true
-          }, 500)
-          if (this.showI < this.inputArr.length - 1) {
-            this.showI += 1
-          } else {
-            this.showI = 0
-          }
-        }, 2000)
+            if (this.showI < this.inputArr.length - 1) {
+              this.showI += 1
+            } else {
+              this.showI = 0
+            }
+          }, 1610)
+        }, 4000)
       }
     }
   }
@@ -89,19 +89,22 @@ export default {
 
 <style>
 
-  .fade-enter-active, {
-    transition: all .3s ease;
+  .fade-enter-active {
+    transition: all .6s ease;
   }
   .fade-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    transition: all 1.6s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
-  .fade-enter, .fade-enter-to {
-    transform: translateX(10px);
+  .fade-enter, .fade-leave-to {
+    transform: translateY(-30px);
     opacity: 0;
   }
 
   .test_title {
     color: #e4393c;
+    position: absolute;
+    left: 0;
+    width: 100%;
   }
   .list {
     width: 34%;
@@ -165,6 +168,7 @@ export default {
     width: 34%;
     margin: 0 33%;
     text-align: left;
+    padding-top: 80px
   }
   .delbtn {
     width: 40px;
