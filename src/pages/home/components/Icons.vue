@@ -10,11 +10,7 @@
           <p class="icon-desc">{{ item.desc }}</p>
         </div>
       </swiper-slide>
-      <swiper-slide>
-
-      </swiper-slide>
     </swiper>
-
   </div>
 </template>
 
@@ -84,6 +80,9 @@ export default {
       })
       return pages
     }
+  },
+  methods: {
+    
   }
 }
 </script>
