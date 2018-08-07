@@ -10,7 +10,11 @@ import 'styles/reset.css' // 初始化css
 import 'styles/border.css' // 1px边框
 import 'styles/iconfont.css' // 1px边框
 
+import lodash from 'lodash'
+Object.defineProperty(Vue.prototype, '$_', { value: lodash }) // 全局引用lodash
+
 Vue.config.productionTip = false
+
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
 

@@ -69,7 +69,8 @@ export default {
     }
   },
   computed: {
-    pages () {
+    pages () { // 计算属性
+      /*
       const pages = []
       this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
@@ -79,10 +80,11 @@ export default {
         pages[page].push(item)
       })
       return pages
+      */
+
+      // 切分数组
+      return this.$_.chunk(this.iconList, 8)
     }
-  },
-  methods: {
-    
   }
 }
 </script>

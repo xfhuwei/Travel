@@ -1,11 +1,9 @@
 <template>
   <div class="wrapper">
     <swiper :options="swiperOption">
-      <!-- slides -->
       <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl">
       </swiper-slide>
-      <!-- Optional controls -->
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
   </div>
@@ -19,6 +17,9 @@ export default {
       swiperOption: {
         pagination: {
           el: '.swiper-pagination'
+        },
+        autoplay: {
+          delay: 3000
         },
         loop: true
       },
@@ -37,8 +38,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-  .wrapper >>> .swiper-pagination-bullet-active // 样式穿透
+<style lang="stylus" scoped>  // scoped 样式当前仅组件可用
+  .wrapper >>> .swiper-pagination-bullet-active  // 样式穿透 >>>
     background #fff
   .wrapper
     overflow hidden
