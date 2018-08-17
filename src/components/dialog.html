@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>弹出层</title>
+  <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/lodash.js/4.17.10/lodash.core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <style>
+    /* 可以设置不同的进入和离开动画 */
+
+    /* 设置持续时间和动画函数 */
+
+    .slide-fade-enter-active {
+      transition: all 0.333s linear;
+    }
+
+    .slide-fade-leave-active {
+      transition: all 0.333s linear;
+    }
+
+    .slide-fade-enter,
+    .slide-fade-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */
+
+      {
+      /* transform: translateX(10px); */
+      opacity: 0;
+    }
+
+    .dialog-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+    }
+    .dialog-main {
+      border: 1px solid rgb(33, 94, 226);
+      background: rgba(8, 107, 201, 0.8);
+      color: #fff;
+      font-size: .9em;
+      max-width: 25%;
+      line-height: 2.8em;
+      padding: 0 1.2rem;
+      border-radius: .1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="example-1">
+    <button @click="showMsg">弹出消息框</button>
+    <button @click="showInfo">弹出信息确认框</button>
+
+    <transition enter-active-class="animated zoomIn" leave-active-class="animated zoomOut">
+      <dialog-msg v-if="pdMsg" @closebox="closeBox"
+       :message="info" :state="pdMsg"></dialog-msg>
+    </transition>
+
+    <transition enter-active-class="animated zoomIn" leave-active-class="animated zoomOut">
+        <dialog-Info v-if="pdInfo" @closebox="closeBox"
+         :message="info" :state="pdInfo"></dialog-msg>
+    </transition>
+
+  </div>
+  <script>
+    Vue.component('dialog-msg', { // 消息
+      template: `
+        <div class="dialog-box">
+          <div class="dialog-main">{{ message }}</div>
+        </div>
+      `,
+      props: ['message', 'state'],
+      mounted: function () {
+        if (this.state) {
+          setTimeout(() => {
+            this.$emit('closebox')
+          }, 4000)
+        }
+      }
+    })
+    Vue.component('dialog-info', { // 确认信息
+      template: `
+        <div class="dialog-box">
+          <div class="dialog-main">{{ message }}</div>
+        </div>
+      `,
+      props: ['message', 'state'],
+      mounted: function () {
+        if (this.state) {
+          setTimeout(() => {
+            this.$emit('closebox')
+          }, 4000)
+        }
+      }
+    })
+    new Vue({
+      el: '#example-1',
+      data: {
+        info: '',
+
+        pdMsg: false,
+        pdInfo: false,
+      },
+      methods: {
+        showMsg: function () {
+          this.pdMsg = true
+          this.info = '这是一条消息'
+        },
+        closeBox: function () {
+          this.pdMsg = false
+        },
+
+        showInfo: function () {
+          this.pdInfo = true
+          this.info = '这是一条确认信息'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
