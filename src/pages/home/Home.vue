@@ -36,8 +36,9 @@ export default {
     },
     getHomeInfoSucc (res) {
       console.log(res)
-      if (res.data.ret) {
-        this.mainData = res.data.data
+      res = res.data
+      if (res.ret && res.data) {
+        this.mainData = res.data
       }
     }
   },
