@@ -12,8 +12,6 @@
 
 <body>
   <div id="example-1">
-    <h1 style="text-align: center">原生js简易弹出层工具</h1>
-    <hr>
     <button @click="showMsg">提示弹出框</button>
     |
     <button @click="showAlert">消息弹出框</button>
@@ -36,7 +34,7 @@
 
   </div>
   <!-- <link rel="stylesheet" href="./dialog-item.css"> -->
-  <script src="./dialog/dialog-item.min.js"></script>
+  <script src="./dialog/dialog-item.js"></script>
   <script>
 
     new Vue({
@@ -63,9 +61,6 @@
         showLoad: function (style) {
           dialog.load(style, 2000);
         }
-      },
-      created: function () {
-        dialog.style('137,22,33');
       }
     })
   </script>

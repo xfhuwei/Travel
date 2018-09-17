@@ -1,0 +1,36 @@
+《原生js精简弹出层》
+
+版本： 1.0
+作者： laohu
+
+使用：
+  1、将dialog文件复制到自己的项目当中
+  2、页面只引用 dialog-item.js 即可、不用依赖其他js
+  3、如需改变颜色风格 修改 dialog-item.css 开头的几个js即可
+
+api：
+  1、弹出消息 msg
+    dialog.msg([content], [time], [callback])
+      content: 内容
+      time: 多少毫秒后关闭 、 默认值： 3000
+      callback： 关闭后执行回调函数
+
+  2、弹出消息框 alert
+    dialog.alert([content], [callback])
+      content: 内容
+      callback： 点击确认后执行回调函数
+
+  3、弹出确认框 affirm
+    dialog.affirm([content], [Tcallback], [Qcallback])
+      content: 内容
+      Tcallback: 点击确认后的回调
+      Qcallback：点击取消后的回调
+
+  4、遮罩层 load
+    dialog.load([style], [time])
+      style: 样式风格，   默认样式 0
+      time:  多少毫秒后关闭 、 默认 不会自己关闭
+
+  5、关闭 close
+    dialog.load([name])
+      name: 需要关闭的框类型 如'alert', 默认
