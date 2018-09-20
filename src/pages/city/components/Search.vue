@@ -6,7 +6,10 @@
 
 <script>
 export default {
-  name: 'CitySearch'
+  name: 'CitySearch',
+  props: {
+    citys: Object
+  }
 }
 </script>
 
