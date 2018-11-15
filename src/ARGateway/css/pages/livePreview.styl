@@ -1,0 +1,576 @@
+// 实时预览页
+.live-preview-container {
+  width 100%
+  .nav-box {
+    float left
+    width 300px
+    height 100%
+    border-right 1px solid #cee0f0
+    box-sizing: border-box
+    // overflow-y auto;
+    background #f7faff
+    position relative
+    .nav-top {
+      padding-bottom 242px;
+      height 100%
+      box-sizing border-box
+      .title {
+        font-size 15px
+        line-height 34px
+        border-bottom 1px solid #cee0f0
+        padding-left 15px
+        background #ECF4FD
+        background-image linear-gradient(to bottom, #fefeff, #eff6ff)
+      }
+      .list {
+        >a {
+          font-size 14px
+          line-height 34px;
+          padding 0 20px
+          display block
+          text-decoration none
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          transition: background-color .123s
+          color #666666
+          cursor pointer
+          &:hover {
+            color #0394f9
+          }
+          &.active {
+            background $hoverColor2
+            color #0394f9
+          }
+          >i {
+            iconFn(16px, 3px, url('../img/livePreview/camera.png'))
+          }
+        }
+      }
+
+    }
+
+    .nav-bottom {
+      height 242px
+      position absolute
+      bottom 0
+      left 0
+      width 100%
+      overflow hidden
+      background #f7faff
+      .tags {
+        height 30px
+        line-height 30px
+        border-top 1px solid #cee0f0
+        border-bottom 1px solid #cee0f0
+        background #ECF4FD
+        background-image linear-gradient(to bottom, #fefeff, #eff6ff)
+        font-size 12px
+        position relative
+        .tags-icon {
+          position absolute
+          font-size 14px
+          right 0
+          top 0
+          padding 5px 10px
+          cursor pointer
+        }
+        > a {
+          display inline-block
+          line-height 24px
+          padding 0 10px
+          border-radius 3px
+          cursor pointer
+          &.active {
+            color #ffffff
+            background #55b0ff
+          }
+        }
+
+      }
+      .handler {
+        height 38px
+        border-bottom 1px solid #cee0f0
+        text-align right
+        >a {
+          display inline-block
+          width 28px
+          height 28px
+          //box-sizing border-box
+          border 1px solid #dae6f9
+          margin-top 4px
+          margin-right 6px
+          cursor pointer
+          //background red\
+
+        }
+      }
+      .table {
+        li {
+          clearFloat()
+          span {
+            float left
+            padding-left 5px
+            overflow hidden
+            box-sizing border-box
+            &.col1 {
+              width 20%
+              text-align center
+            }
+            &.col2 {
+              width 50%
+            }
+            &.col3 {
+              width 30%
+              text-align center
+            }
+          }
+        }
+        .table_header {
+          li {
+            border-bottom 1px solid #cee0f0
+            background #eff6ff
+            line-height 30px
+            span {
+              font-weight bold
+              color #333
+            }
+          }
+        }
+        .table_body {
+          height 140px
+          overflow-y: auto
+          background #fff
+          li {
+            line-height (140/4)px
+            &:nth-child(odd) {
+              background #f7faff
+            }
+            &:hover,&.active {
+              background $hoverColor2
+            }
+          }
+        }
+      }
+      .xunhang {
+        .handler {
+          .bo {
+            background-image url("../img/livePreview/list/bo_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/bo.png")
+              background-color #55B0FF
+            }
+          }
+          .ting {
+            background-image url("../img/livePreview/list/ting_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/ting.png")
+              background-color #55B0FF
+            }
+          }
+          .jia {
+            background-image url("../img/livePreview/list/jia_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/jia.png")
+              background-color #55B0FF
+            }
+          }
+          .xiu {
+            background-image url("../img/livePreview/list/xiu_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/xiu.png")
+              background-color #55B0FF
+            }
+          }
+          .shan {
+            background-image url("../img/livePreview/list/shan_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/shan.png")
+              background-color #55B0FF
+            }
+          }
+        }
+        .table {
+
+        }
+      }
+      .yuweizi {
+        .handler {
+          .jia {
+            background-image url("../img/livePreview/list/jia_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/jia.png")
+              background-color #55B0FF
+            }
+          }
+          .shang {
+            background-image url("../img/livePreview/list/shang_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/shang.png")
+              background-color #55B0FF
+            }
+          }
+          .xia {
+            background-image url("../img/livePreview/list/xia_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/xia.png")
+              background-color #55B0FF
+            }
+          }
+          .shan {
+            background-image url("../img/livePreview/list/shan_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/shan.png")
+              background-color #55B0FF
+            }
+          }
+          .yan {
+            background-image url("../img/livePreview/list/yan_f.png")
+            &:hover {
+              background-image url("../img/livePreview/list/yan.png")
+              background-color #55B0FF
+            }
+          }
+
+        }
+        .table {
+
+        }
+      }
+      .yuntai {
+        >ul {
+          padding 20px 10px 5px 10px
+          li{
+            margin-bottom 5px
+            clearFloat()
+            a {
+              float left
+              display inline-block
+              height 37px
+              width 52px
+              box-sizing border-box
+              //background #f4f7fd
+              //background-image linear-gradient(to bottom, #fdfeff, #eef2fb)
+              //border 1px solid #c1d5e6
+              border-radius 3px
+              cursor pointer
+              background url("../img/livePreview/yuntai/left_top.png") no-repeat center
+              //background-size contain
+              &.middle-a {
+                margin 0 5px
+              }
+              &.right-a {
+                margin-left 8px
+                position relative
+                left 2px
+              }
+              &.left_top {
+                background-image url("../img/livePreview/yuntai/left_top.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/left_top_f.png")
+                }
+              }
+              &.top {
+                background-image url("../img/livePreview/yuntai/top.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/top_f.png")
+                }
+              }
+              &.right_top {
+                background-image url("../img/livePreview/yuntai/right_top.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/right_top_f.png")
+                }
+              }
+              &.left {
+                background-image url("../img/livePreview/yuntai/left.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/left_f.png")
+                }
+              }
+              &.reset {
+                background-image url("../img/livePreview/yuntai/reset.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/reset_f.png")
+                }
+              }
+              &.right {
+                background-image url("../img/livePreview/yuntai/right.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/right_f.png")
+                }
+              }
+              &.left_bottom {
+                background-image url("../img/livePreview/yuntai/left_bottom.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/left_bottom_f.png")
+                }
+              }
+              &.bottom {
+                background-image url("../img/livePreview/yuntai/bottom.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/bottom_f.png")
+                }
+              }
+              &.right_bottom {
+                background-image url("../img/livePreview/yuntai/right_bottom.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/right_bottom_f.png")
+                }
+              }
+              &.shi {
+                background-image url("../img/livePreview/yuntai/shi.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/shi_f.png")
+                }
+              }
+              &.xu {
+                background-image url("../img/livePreview/yuntai/xu.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/xu_f.png")
+                }
+              }
+              &.qian {
+                background-image url("../img/livePreview/yuntai/qian.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/qian_f.png")
+                }
+              }
+              &.hou {
+                background-image url("../img/livePreview/yuntai/hou.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/hou_f.png")
+                }
+              }
+              &.jiaojuda {
+                background-image url("../img/livePreview/yuntai/jiaojuda.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/jiaojuda_f.png")
+                }
+              }
+              &.jiaojuxiao {
+                background-image url("../img/livePreview/yuntai/jiaojuxiao.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/jiaojuxiao_f.png")
+                }
+              }
+            }
+          }
+        }
+        >div {
+          padding 0 11px
+          .range-p {
+            float left
+            width 150px
+            height 23px
+            padding 0 20px
+            padding-top 15px
+            position relative
+            >i {
+              position absolute
+              top 11px
+              color #65a915
+              cursor pointer
+              &.range-minus {
+                left 0
+              }
+              &.range-plus {
+                right 0
+              }
+            }
+          }
+          p {
+            float right
+            >a {
+              float left
+              width 37px
+              height 37px
+              cursor pointer
+              &:first-child {
+                border-right 0
+                position relative
+                left 1px
+              }
+              &.suo {
+                background-image url("../img/livePreview/yuntai/suo.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/suo_f.png")
+                }
+              }
+              &.baocun {
+                background-image url("../img/livePreview/yuntai/baocun.png")
+                &:hover {
+                  background-image url("../img/livePreview/yuntai/baocun_f.png")
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .video-box {
+    float left
+    width 10%
+    height 100%
+    padding 10px
+    box-sizing border-box
+    overflow hidden
+    position relative
+    .video-main {
+      background #202731
+      background-image url("../img/livePreview/loading.png")
+      background-repeat no-repeat
+      background-position center
+      width 100%
+      height 100%
+      box-sizing border-box
+      padding-bottom 36px
+    }
+    .video-handler {
+      position absolute
+      bottom 0
+      left 0
+      width 100%
+      height 46px
+      padding 10px
+      padding-top 0
+      box-sizing border-box
+      >div {
+        border 1px solid #cee0f0
+        box-sizing border-box
+        height 36px
+        background #ECF4FD
+        background-image linear-gradient(to bottom, #fefeff, #eff6ff)
+        >div {
+          margin 0 15px
+          &.left {
+            float left
+            .maliu {
+              position relative
+              text-align right
+              color #999
+              font-size 12px
+              &:hover {
+                .maliu-hide {
+                  display inline-block
+                }
+              }
+              .maliu-hide {
+                display none
+                position absolute
+                top -30px
+                left 0
+                height 32px
+                border 1px solid #cee0f0
+                background #ffffff
+                width 105px
+                border-radius 4px
+                box-shadow 0px 2px 3px #d3ebff
+                span {
+                  float left
+                  width 35px
+                  height 32px
+                  background-image url("../img/livePreview/maliu1.png")
+                  background-repeat no-repeat
+                  background-position center
+                  &.active {
+                    background-color #D3EBFF
+                  }
+                  &.maliu1-span{
+                    background-image url("../img/livePreview/maliu1.png")
+                    &:hover, &.active {
+                      background-image url("../img/livePreview/maliu1_f.png")
+                    }
+                  }
+                  &.maliu2-span{
+                    background-image url("../img/livePreview/maliu2.png")
+                    &:hover, &.active {
+                      background-image url("../img/livePreview/maliu2_f.png")
+                    }
+                  }
+                  &.maliu3-span{
+                    background-image url("../img/livePreview/maliu3.png")
+                    &:hover, &.active {
+                      background-image url("../img/livePreview/maliu3_f.png")
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &.right {
+            float right
+          }
+          >div {
+            float left
+            width 34px
+            height 34px
+            //background red
+            cursor pointer
+            box-sizing border-box
+            border 1px solid transparent
+            &:hover {
+              border-color #c1d5e6
+              border-radius 50%
+            }
+            &.kuoyin {
+              background url("../img/livePreview/kuoyin.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/kuoyin_f.png")
+              }
+            }
+            &.maliu1 {
+              background url("../img/livePreview/maliu1.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/maliu1_f.png")
+              }
+            }
+            &.maliu2 {
+              background url("../img/livePreview/maliu2.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/maliu2_f.png")
+              }
+            }
+            &.maliu3 {
+              background url("../img/livePreview/maliu3.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/maliu3_f.png")
+              }
+            }
+            &.duijiang {
+              background url("../img/livePreview/duijiang.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/duijiang_f.png")
+              }
+            }
+            &.jieping {
+              background url("../img/livePreview/jieping.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/jieping_f.png")
+              }
+            }
+            &.luxiang {
+              background url("../img/livePreview/luxiang.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/luxiang_f.png")
+              }
+            }
+            &.fangda {
+              background url("../img/livePreview/fangda.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/fangda_f.png")
+              }
+            }
+            &.quanping {
+              background url("../img/livePreview/quanping.png") no-repeat center
+              &.active {
+                background-image url("../img/livePreview/quanping_f.png")
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

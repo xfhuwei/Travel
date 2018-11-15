@@ -1,0 +1,118 @@
+clearFloat() {
+  &:after {
+    content: ''
+    display: block
+    clear: both
+  }
+}
+
+lineTextHide() {
+  overflow: hidden
+  -ms-text-overflow: ellipsis
+  text-overflow: ellipsis
+  white-space: nowrap
+}
+
+// 图标通用
+iconFn($size = 30px, $top = 5px, $img = red) {
+  display inline-block
+  width $size
+  height $size
+  position relative
+  margin-right 6px
+  top $top
+  background $img
+}
+
+// 按钮通用
+btnFn($h=28px, $p=15px, $bc=$bgColor, $hc=$hoverColor) {
+  display inline-block
+  height $h
+  line-height $h
+  padding 0 $p
+  background-color $bc
+  text-align center
+  color #fff
+  border-radius 4px
+  cursor pointer
+  transition background-color .123s
+  &:hover {
+    background-color $hc
+  }
+}
+btn2Fn($h=28px, $p=15px, $bc=#fff, $dc=#ddd, $hc=#ddd) {
+  display inline-block
+  height $h
+  line-height $h
+  padding 0 $p
+  background-color $bc
+  box-sizing border-box
+  text-align center
+  border 1px solid $dc
+  color #666
+  border-radius 4px
+  cursor pointer
+  transition background-color .123s
+  &:hover {
+    background-color $hc
+  }
+}
+
+
+// 模态框 通用
+.modal-box {
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background-color rgba(0,0,0,.3)
+  z-index 1000
+  .modal-main {
+    width 480px;
+    height 568px;
+    background-color #fff
+    position absolute
+    top 50%
+    left 50%
+    margin-left -240px
+    margin-top -284px
+    border-radius 3px
+  }
+  .close-btn {
+    position absolute
+    top 0
+    right 0
+    color #ddd
+    font-size 18px
+    cursor pointer
+    padding 8px
+    &:hover {
+      color #fff
+    }
+  }
+  .modal-title {
+    line-height 36px
+    padding-left 15px
+    color #fff
+    font-weight bold
+    background #0a88f2
+  }
+  .content {
+    height 568 - 36 - 41px;
+    overflow-y auto
+  }
+  .modal-handler {
+    height 40px
+    border-top 1px solid $hoverColor2
+    text-align center
+    background #f7faff
+    > a {
+      cursor pointer
+      margin-top 6px
+      margin-right 10px
+      btnFn()
+    }
+  }
+
+}

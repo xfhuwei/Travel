@@ -1,0 +1,166 @@
+<div class="aisle-box">
+    <div class="title">
+        <span><b></b><span data-localize="system.system.aisle.IPCList">IPC列表</span></span>
+        <div class="handler">
+            <a id="add-btn" data-localize="system.system.aisle.add">新增</a>
+            <a id="lead-btn" data-localize="system.system.aisle.import">导入</a>
+            <a data-localize="system.system.aisle.export">导出</a>
+            <a id="remove-btn" data-localize="system.system.aisle.delete">删除</a>
+        </div>
+    </div>
+
+    <div class="table-big-box">
+        <div class="scroll-header">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="w-40 check-th"><i class="not-check fa "></i></th>
+                    <th class="w-50" data-localize="system.system.aisle.number">通道号</th>
+                    <th data-localize="system.system.aisle.name">通道名称</th>
+                    <th data-localize="system.system.aisle.ip">IP地址</th>
+                    <th data-localize="system.system.aisle.username">用户名</th>
+                    <th data-localize="system.system.aisle.password">密码</th>
+                    <th data-localize="system.system.aisle.port">端口</th>
+                    <th data-localize="system.system.aisle.manufacturers">厂家</th>
+                    <th data-localize="system.system.aisle.longitude">经度</th>
+                    <th data-localize="system.system.aisle.latitude">纬度</th>
+                    <th data-localize="system.system.aisle.height">安装高度</th>
+                    <th class="w-50" data-localize="system.system.aisle.status">状态</th>
+                    <th data-localize="system.system.aisle.operation">操作</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="table-box">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="w-40 check-th"><i class="not-check fa "></i></th>
+                    <th class="w-50" data-localize="system.system.aisle.number">通道号</th>
+                    <th data-localize="system.system.aisle.name">通道名称</th>
+                    <th data-localize="system.system.aisle.ip">IP地址</th>
+                    <th data-localize="system.system.aisle.username">用户名</th>
+                    <th data-localize="system.system.aisle.password">密码</th>
+                    <th data-localize="system.system.aisle.port">端口</th>
+                    <th data-localize="system.system.aisle.manufacturers">厂家</th>
+                    <th data-localize="system.system.aisle.longitude">经度</th>
+                    <th data-localize="system.system.aisle.latitude">纬度</th>
+                    <th data-localize="system.system.aisle.height">安装高度</th>
+                    <th class="w-50" data-localize="system.system.aisle.status">状态</th>
+                    <th data-localize="system.system.aisle.operation">操作</th>
+                </tr>
+                </thead>
+                <tbody class="table-body">
+                <!--<tr class="ipc-item">-->
+                <!--<td class="w-40"><i class="check-i not-check fa "></i></td>-->
+                <!--<td class="w-50">1</td>-->
+                <!--<td>大门口</td>-->
+                <!--<td>192.16.11.111</td>-->
+                <!--<td>admin</td>-->
+                <!--<td>admin</td>-->
+                <!--<td>8080</td>-->
+                <!--<td>海康</td>-->
+                <!--<td>113.623342</td>-->
+                <!--<td>23.623342</td>-->
+                <!--<td>56</td>-->
+                <!--<td>-->
+                <!--<a class="fa fa-trash-o"></a>-->
+                <!--<a class="fa fa-trash-o"></a>-->
+                <!--<a class="fa fa-trash-o"></a>-->
+                <!--</td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="page-box">
+        <div id="page"></div>
+    </div>
+
+
+    <!-- 弹出框：新增add / 修改edit -->
+    <div class="modal-box add-modal" data-val="add" style="display: none">
+        <div class="modal-main">
+            <a class="close-btn fa fa-close"></a>
+            <div class="modal-title" data-localize="system.system.aisle.add">新增</div>
+            <div class="content">
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.name">通道名称</span>：</label>
+                    <input id="from-aisleName" class="from-input" type="text" value="D02">
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.ip">IP地址</span>：</label>
+                    <input id="from-ip" class="from-input" type="text" value="D02">
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.username">用户名</span>：</label>
+                    <input id="from-userName" class="from-input" type="text" value="D02">
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.password">密码</span>：</label>
+                    <input id="from-password" class="from-input" type="text" value="D02">
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.port">端口</span>：</label>
+                    <input id="from-port" class="from-input" type="text" value="D02">
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.protocol">协议类型</span>：</label>
+                    <div class="from-select" id="protocol-type">
+                        <i class="select-icon fa fa-sort-down"></i>
+                        <span class="select-result" data-val="1">ONVIF</span>
+                        <div class="option-list">
+                            <p class="option-item" data-val="1">ONVIF</p>
+                            <p class="option-item" data-val="2">ARP</p>
+                            <p class="option-item" data-val="3">HTTPS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.manufacturers">厂商</span>：</label>
+                    <input id="from-manufacturers" class="from-input" type="text" value="海康">
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.longitude">经度</span>：</label>
+                    <input id="from-longitude" class="from-input" type="text" value="海康">
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.latitude">纬度</span>：</label>
+                    <input id="from-latitude" class="from-input" type="text" value="海康">
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.aisle.height">高度</span>：</label>
+                    <input id="from-height" class="from-input" type="text" value="海康">
+                </div>
+            </div>
+            <div class="modal-handler">
+                <a class="confirm" id="add-confirm" data-localize="system.system.aisle.confirm">确定</a>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出框：导入 -->
+    <div class="modal-box lead-modal" style="display: none">
+        <div class="modal-main">
+            <a class="close-btn fa fa-close"></a>
+            <div class="modal-title">导入</div>
+            <div class="content">
+                <div class="item">
+                    <label data-localize="system.system.aisle.importFile">导入文件：</label>
+                    <input class="from-input" readonly="readonly" type="text" id="file-name">
+                    <a class="from-btn liulan-btn">
+                        <span data-localize="system.system.aisle.browse">浏览</span>
+                        <input type="file" id="liulan-file">
+                    </a>
+                </div>
+            </div>
+            <div class="modal-handler">
+                <a class="confirm" id="lead-confirm" data-localize="system.system.aisle.confirm">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $.getScript('./js/includes/setup/system/aisle.js');
+</script>

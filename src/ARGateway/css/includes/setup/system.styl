@@ -1,0 +1,1028 @@
+/**
+  系统设置
+*/
+
+// 系统设置
+.setup-box {
+  .setup-nav {
+    line-height 34px
+    height 34px
+    border-bottom 1px solid #cee0f0
+    background #f7faff
+    >a {
+      display inline-block
+      padding 0 15px
+      margin 0 15px
+      position relative
+      cursor pointer
+      >i {
+        position absolute
+        width 100%
+        height 3px
+        background transparent
+        bottom -1.5px
+        left 0px
+      }
+      &.active {
+        color #109af9
+        font-weight bold
+        >i {
+          background #109af9
+        }
+      }
+    }
+  }
+  .setup-main {
+    .base-main {
+      padding-top 20px
+      .item {
+        margin-bottom 15px
+        label {
+          width 150px
+          text-align right
+          display inline-block
+        }
+        input {
+          width 200px
+          height 30px
+          line-height 28px
+          box-sizing border-box
+          border-radius 4px
+          border 1px solid $hoverColor2
+          margin-right 8px
+          padding 0 10px
+          &.x2 {
+            width 400px
+          }
+        }
+        .btn {
+          btnFn(30px)
+          margin-top 10px
+        }
+      }
+    }
+
+    .time-main {
+      padding 10px
+      label {
+        width 120px
+        display inline-block
+        text-align right
+      }
+      .title {
+        font-size 16px
+        color #333
+        margin-top 5px
+        margin-bottom 20px
+        padding-left 10px
+        >b {
+          display inline-block
+          width 3px
+          height 15px
+          background #0394f9
+          margin-right 10px
+          position relative
+          top 2px
+        }
+      }
+      .item {
+        margin-bottom 15px
+        input {
+          width 200px
+          height 30px
+          line-height 28px
+          box-sizing border-box
+          border-radius 4px
+          border 1px solid $hoverColor2
+          margin-right 8px
+          padding 0 10px
+          &.x2 {
+            width 400px
+          }
+          &.readonly {
+            background #f7faff
+            color #a5b3c7
+          }
+        }
+        .from-btn {
+          margin-top 20px
+        }
+        &.set-time-item {
+          height 30px
+          position relative
+        }
+        .time-input {
+          display inline-block
+          position relative
+          input {
+            cursor pointer
+            position relative
+            background transparent
+            z-index 1
+          }
+          .time-icon {
+            cursor pointer
+            z-index 0
+            position absolute
+            width 18px
+            height 18px
+            right 15px
+            top 5px
+            background url("../img/systemSetup/day.png")
+          }
+        }
+      }
+      .radio {
+        display inline-block
+        cursor pointer
+        margin-bottom 20px
+        margin-left 20px
+        b {
+          display inline-block
+          width 14px
+          height 14px
+          border 1px solid #4897f6
+          border-radius 50%
+          position relative
+          top 3px
+          i {
+            position absolute
+            width 8px
+            height 8px
+            border-radius 50%
+            top 3px
+            left 3px
+          }
+        }
+        &.active {
+          b {
+            background #d7edff
+            i {
+              background #4897f6
+            }
+          }
+        }
+      }
+      .timezone {
+        border-bottom 1px dashed #dae6f9
+        padding-top 10px
+        padding-bottom 20px
+        .from-select {
+          width 400px
+          .option-list {
+            height 266px
+            overflow-y auto
+          }
+        }
+      }
+      .ntp, .hand {
+        border-bottom 1px dashed #dae6f9
+        padding 10px 0
+      }
+    }
+  }
+}
+
+
+// 系统维护
+.maintain-box {
+  .maintain-nav {
+    line-height 34px
+    height 34px
+    border-bottom 1px solid #cee0f0
+    background #f7faff
+    >a {
+      display inline-block
+      padding 0 15px
+      margin 0 15px
+      position relative
+      cursor pointer
+      >i {
+        position absolute
+        width 100%
+        height 3px
+        background transparent
+        bottom -1.5px
+        left 0px
+      }
+      &.active {
+        color #109af9
+        font-weight bold
+        >i {
+          background #109af9
+        }
+      }
+    }
+  }
+  .maintain-main {
+    .upgrade-main {
+      padding 10px
+      .title {
+        font-size 16px
+        color #333
+        margin-top 5px
+        margin-bottom 20px
+        padding-left 10px
+        >b {
+          display inline-block
+          width 3px
+          height 15px
+          background #0394f9
+          margin-right 10px
+          position relative
+          top 2px
+        }
+      }
+      .reset {
+        border-bottom 1px dashed #dae6f9
+        padding-top 10px
+        padding-bottom 20px
+        .from-btn {
+          margin 0 20px
+        }
+      }
+      .upgrade {
+        padding-top 10px
+        .item {
+          margin-bottom 20px
+          label {
+            width 65px
+            display inline-block
+            text-align right
+          }
+          .from-select {
+            width 150px
+            background #f7faff
+          }
+          .from-btn {
+            margin 0 5px 0 5px
+          }
+          .liulan-btn {
+            position relative
+            //width 58px
+            //height 28px
+            box-sizing border-box
+            overflow hidden
+            top 9px
+            >input {
+              position absolute
+              top 0
+              left 0
+              width 100%
+              height 100%
+              opacity 0
+            }
+          }
+          .progress-box {
+            position relative
+            top 3px
+            display inline-block
+            width 400px
+            height 14px
+            background-color #cee0f0
+            border-radius 7px
+            .progress {
+              position relative
+              top 3px
+              left 3px
+              width 394px
+              height 8px
+              overflow hidden
+              >span {
+                position absolute
+                top 0
+                left 0
+                width 0%
+                height 100%
+                border-radius 4px
+                background-color #13c65f
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .log-main {
+      .log-handler {
+        margin 20px 0
+        .item {
+          display inline-block
+          label {
+            display inline-block
+            width 80px
+            text-align right
+          }
+          .from-select {
+            width 160px
+          }
+          .time-input {
+            display inline-block
+            position relative
+            input {
+              cursor pointer
+              position relative
+              background transparent
+              z-index 1
+            }
+            .time-icon {
+              cursor pointer
+              z-index 0
+              position absolute
+              width 18px
+              height 18px
+              right 15px
+              top 5px
+              background url("../img/systemSetup/day.png")
+            }
+          }
+        }
+      }
+      .title {
+        font-size 16px
+        color #333
+        margin-top 5px
+        margin-bottom 20px
+        padding-left 10px
+        >b {
+          display inline-block
+          width 3px
+          height 15px
+          background #0394f9
+          margin-right 10px
+          position relative
+          top 2px
+        }
+        .green-btn {
+          font-size 14px
+          float right
+          margin-right 10px
+          btnFn(28px, 15px, #13B357, #139d4f)
+        }
+      }
+      .table-big-box {
+        margin 0 10px
+        position relative
+
+        .table {
+          width 100%
+          th {
+            background-color #e4f8ff
+            font-weight bold
+            border-color #cfdeec
+            //border-right-color transparent
+          }
+          td {
+            text-align center
+            color #666
+            border-color #D6E5F3
+            >a {
+              cursor pointer
+              margin 0 3px
+            }
+          }
+          tbody>tr {
+            transition background-color .123s
+            cursor default
+            &:hover {
+              background-color $hoverColor2
+            }
+          }
+          .not-check {
+            display inline-block
+            width 10px
+            height 10px
+            border 1px solid #ccc
+            background #fff
+          }
+          .fa-check-square-o {
+            color $color
+          }
+          .w-40 {
+            width 40px
+          }
+          .w-50 {
+            width 50px
+          }
+          .lastTd {
+            padding 0
+            >a {
+              position relative
+              top 2px
+              display inline-block
+              width 26px
+              height 26px
+              background-size contain
+            }
+            .remove-item-a {
+              background-image url("../img/systemSetup/remove.png")
+              &:hover {
+                background-image url("../img/systemSetup/remove_f.png")
+              }
+            }
+            .edit-item-a {
+              background-image url("../img/systemSetup/edit.png")
+              &:hover {
+                background-image url("../img/systemSetup/edit_f.png")
+              }
+            }
+            .href-item-a {
+              background-image url("../img/systemSetup/href.png")
+              &:hover {
+                background-image url("../img/systemSetup/href_f.png")
+              }
+            }
+          }
+
+        }
+
+
+        .scroll-header {
+          position absolute
+          top 0
+          left 0
+          width 100%
+          z-index 1
+        }
+
+      }
+      .page-box {
+        padding 10px
+        text-align right
+        #page {
+          width 100%
+
+          .whj_jqueryPaginationCss-1 {
+            width 100%
+            position relative
+            select {
+              float left
+            }
+            .whj_totalSizeSingle {
+              float left
+              position relative
+              margin-left 15px
+            }
+          }
+
+        }
+
+      }
+
+
+    }
+  }
+}
+
+// 通道管理
+.aisle-box {
+  padding 0 10px
+  .title {
+    padding-top 10px
+    >span {
+      line-height 44px
+      font-size 16px
+      >b {
+        display inline-block
+        width 3px
+        height 16px
+        margin-right 6px
+        background $bgColor
+        position relative
+        top 2px
+      }
+    }
+    .handler {
+      float: right
+      margin-top 5px
+      a {
+        margin-left 10px
+        btnFn()
+        &:last-child {
+          btnFn(28px, 15px, #13B357, #139d4f)
+        }
+      }
+    }
+  }
+
+  .table-big-box {
+    position relative
+
+    .table {
+      width 100%
+      th {
+        background-color #e4f8ff
+        font-weight bold
+        border-color #cfdeec
+        //border-right-color transparent
+      }
+      td {
+        text-align center
+        color #666
+        border-color #D6E5F3
+        >a {
+          cursor pointer
+          margin 0 3px
+        }
+      }
+      tbody>tr {
+        transition background-color .123s
+        cursor default
+        &:hover {
+          background-color $hoverColor2
+        }
+      }
+      .not-check {
+        display inline-block
+        width 10px
+        height 10px
+        border 1px solid #ccc
+        background #fff
+      }
+      .fa-check-square-o {
+        color $color
+      }
+      .w-40 {
+        width 40px
+      }
+      .w-50 {
+        width 50px
+      }
+      .lastTd {
+        padding 0
+        >a {
+          position relative
+          top 2px
+          display inline-block
+          width 26px
+          height 26px
+          background-size contain
+        }
+        .remove-item-a {
+          background-image url("../img/systemSetup/remove.png")
+          &:hover {
+            background-image url("../img/systemSetup/remove_f.png")
+          }
+        }
+        .edit-item-a {
+          background-image url("../img/systemSetup/edit.png")
+          &:hover {
+            background-image url("../img/systemSetup/edit_f.png")
+          }
+        }
+        .href-item-a {
+          background-image url("../img/systemSetup/href.png")
+          &:hover {
+            background-image url("../img/systemSetup/href_f.png")
+          }
+        }
+      }
+
+    }
+
+
+    .scroll-header {
+      position absolute
+      top 0
+      left 0
+      width 100%
+      z-index 1
+    }
+
+  }
+
+
+
+  .page-box {
+    padding 15px 0
+    text-align right
+    #page {
+      width 100%
+
+      .whj_jqueryPaginationCss-1 {
+        width 100%
+        position relative
+        select {
+          float left
+        }
+        .whj_totalSizeSingle {
+          float left
+          position relative
+          margin-left 15px
+        }
+      }
+
+    }
+
+  }
+
+
+  .modal-box {
+    .content {
+      .item {
+        margin-bottom 16px
+        &:first-child {
+          padding-top 22px
+        }
+        label {
+          display inline-block
+          width 160px
+          text-align right
+        }
+        .from-select {
+          .select-icon {
+            z-index 0
+          }
+        }
+      }
+
+    }
+    &.lead-modal {
+      .modal-main {
+        height 170px;
+        margin-top -85px
+      }
+      .content {
+        height 170 - 36 - 41px;
+        .item {
+          margin-top 8px
+          label {
+            width 85px
+          }
+          .from-input {
+            width 300px
+          }
+          .liulan-btn {
+            position relative
+            width 58px
+            height 28px
+            box-sizing border-box
+            overflow hidden
+            top 9px
+            >input {
+              position absolute
+              top 0
+              left 0
+              width 100%
+              height 100%
+              opacity 0
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+// 用户管理
+.user-box {
+  .user-nav {
+    line-height 34px
+    height 34px
+    border-bottom 1px solid #cee0f0
+    background #f7faff
+    >a {
+      display inline-block
+      padding 0 15px
+      margin 0 15px
+      position relative
+      cursor pointer
+      >i {
+        position absolute
+        width 100%
+        height 3px
+        background transparent
+        bottom -1.5px
+        left 0px
+      }
+      &.active {
+        color #109af9
+        font-weight bold
+        >i {
+          background #109af9
+        }
+      }
+    }
+  }
+  .user-main {
+    .manage-main {
+      padding 0 10px
+
+      .modal-box {
+        .content {
+          .item {
+            margin-bottom 16px
+            &:first-child {
+              padding-top 22px
+            }
+            label {
+              display inline-block
+              width 160px
+              text-align right
+            }
+            &.password-item {
+              margin-bottom 12px
+            }
+            .password-tips {
+              display inline-block
+              width 200px
+              >p {
+                position relative
+                margin-bottom 8px
+                clearFloat()
+                >b {
+                  float left
+                  width 60px
+                  height 4px
+                  background #dae6f9
+                  position relative
+                  &.middle-b {
+                    margin 0 10px
+                  }
+                  &.active {
+                    i {
+                      &.red {
+                        background red
+                      }
+                      &.yellow {
+                        background yellow
+                      }
+                      &.green {
+                        background green
+                      }
+                    }
+                  }
+                  >i {
+                    position absolute
+                    top 0
+                    left 0
+                    width 100%
+                    height 100%
+                    background transparent
+                  }
+                }
+                >span {
+                  position absolute
+                  right -22px
+                  top -8px
+                }
+              }
+              >div {
+                font-size 12px
+                color #a5b3c7
+                line-height 20px
+              }
+            }
+          }
+
+          .select-panel {
+            padding 0 13px
+            clearFloat()
+            .options-box {
+              float left
+              width 210px
+              height 233px
+              border 1px solid #d3e3f1
+              .panel-title {
+                background #eff6ff
+                line-height 30px
+                border-bottom 1px solid #d3e3f1
+                padding 0 10px
+                >span {
+                  color #333333
+                  font-weight bold
+                }
+                >a {
+                  float right
+                  color #999999
+                  font-size 12px
+                  cursor pointer
+                  &:hover {
+                    color #333
+                  }
+                }
+              }
+              .panel-list {
+                height 233 - 33px;
+                overflow-y auto
+                .panel-item {
+                  line-height 40px
+                  padding 0 20px
+                  cursor default
+                  &:nth-child(2n) {
+                    background #f7faff
+                  }
+                  &:hover {
+                    color #0394f9
+                  }
+                  &.active {
+                    background #d3ebff
+                    color #0394f9
+                    font-weight bold
+                  }
+                }
+              }
+            }
+            .panel-dire {
+              float left
+              width 30px
+              height 233px
+              >i {
+                width 15px
+                height 14px
+                display block
+                margin 0 auto
+                &.right-icon {
+                  margin-top 83px
+                  margin-bottom 40px
+                  background-image url("../img/systemSetup/right.png")
+                  &.active {
+                    background-image url("../img/systemSetup/right_f.png")
+                  }
+                }
+                &.left-icon {
+                  background-image url("../img/systemSetup/left.png")
+                  &.active {
+                    background-image url("../img/systemSetup/left_f.png")
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.add-modal {
+          .modal-main {
+            height 646px;
+            margin-top -323px
+          }
+          .content {
+            height 646 - 36 - 41px;
+          }
+        }
+        &.limits-modal {
+          .modal-main {
+            height 492px;
+            margin-top -246px
+          }
+          .content {
+            height 492 - 36 - 41px;
+          }
+        }
+        &.password-modal {
+          .modal-main {
+            height 348px;
+            margin-top -(348/2)px
+          }
+          .content {
+            height 348 - 36 - 41px;
+          }
+        }
+      }
+
+
+    }
+
+    .online-main {
+      padding 0 10px
+
+    }
+
+    .title {
+      font-size 16px
+      color #333
+      margin 15px 0
+      >b {
+        display inline-block
+        width 3px
+        height 15px
+        background #0394f9
+        margin-right 10px
+        position relative
+        top 2px
+      }
+      .from-btn {
+        font-size 14px
+        float right
+        margin-right 10px
+      }
+      .green-btn {
+        font-size 14px
+        float right
+        btnFn(28px, 15px, #13B357, #139d4f)
+      }
+    }
+
+    .table-big-box {
+      position relative
+
+      .table {
+        width 100%
+        th {
+          background-color #e4f8ff
+          font-weight bold
+          border-color #cfdeec
+          //border-right-color transparent
+        }
+        td {
+          text-align center
+          color #666
+          border-color #D6E5F3
+          >a {
+            cursor pointer
+            margin 0 3px
+          }
+        }
+        tbody>tr {
+          transition background-color .123s
+          cursor default
+          &:hover {
+            background-color $hoverColor2
+          }
+        }
+        .not-check {
+          display inline-block
+          width 10px
+          height 10px
+          border 1px solid #ccc
+          background #fff
+        }
+        .fa-check-square-o {
+          color $color
+        }
+        .w-40 {
+          width 40px
+        }
+        .w-50 {
+          width 50px
+        }
+        .lastTd {
+          padding 0
+          >a {
+            position relative
+            top 2px
+            display inline-block
+            width 26px
+            height 26px
+            background-size contain
+          }
+          .remove-item-a {
+            background-image url("../img/systemSetup/remove.png")
+            &:hover {
+              background-image url("../img/systemSetup/remove_f.png")
+            }
+          }
+          .limits-item-a {
+            background-image url("../img/systemSetup/limits.png")
+            &:hover {
+              background-image url("../img/systemSetup/limits_f.png")
+            }
+          }
+          .password-item-a {
+            background-image url("../img/systemSetup/password.png")
+            &:hover {
+              background-image url("../img/systemSetup/password_f.png")
+            }
+          }
+        }
+
+      }
+
+
+      .scroll-header {
+        position absolute
+        top 0
+        left 0
+        width 100%
+        z-index 1
+      }
+
+    }
+
+    .page-box {
+      padding 15px 0
+      text-align right
+      #manage-page, #online-page {
+        width 100%
+
+        .whj_jqueryPaginationCss-1 {
+          width 100%
+          position relative
+          select {
+            float left
+          }
+          .whj_totalSizeSingle {
+            float left
+            position relative
+            margin-left 15px
+          }
+        }
+
+      }
+
+    }
+
+
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Cmd": "AswGetTimeCfg",
+  "Result": 0,
+  "Message": "获取成功",
+  "Content": {
+    "Zone": "GMT-10:00",
+    "TimingMode": "Manual",
+    "Manual": "2018-10-17 09:36:52",
+    "NTP" : {
+      "Address": "s1a.time.edu.cn",
+      "Port": "123",
+      "TimingInterval": "60"
+    }
+  }
+}

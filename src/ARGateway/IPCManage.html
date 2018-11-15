@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-localize="title">实时预览</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./quote/jquery-pagination/css/pagination.css">
+</head>
+<body>
+
+<div id="ar-header"></div>
+
+<div class="ipc-manage-container">
+
+    <div class="title">
+        <span><b></b>IPC列表</span>
+        <div class="handler">
+            <a id="add-btn">新增</a>
+            <a>导入</a>
+            <a>导出</a>
+            <a id="remove-btn">删除</a>
+        </div>
+    </div>
+
+    <div class="table-big-box">
+        <div class="scroll-header">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="w-40 check-th"><i class="not-check fa "></i></th>
+                    <th class="w-50">通道号</th>
+                    <th>通道名称</th>
+                    <th>IP地址</th>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>端口</th>
+                    <th>厂家</th>
+                    <th>经度</th>
+                    <th>纬度</th>
+                    <th>安装高度</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="table-box">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="w-40 check-th"><i class="not-check fa "></i></th>
+                    <th class="w-50">通道号</th>
+                    <th>通道名称</th>
+                    <th>IP地址</th>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>端口</th>
+                    <th>厂家</th>
+                    <th>经度</th>
+                    <th>纬度</th>
+                    <th>安装高度</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="table-body">
+                <!--<tr class="ipc-item">-->
+                    <!--<td class="w-40"><i class="check-i not-check fa "></i></td>-->
+                    <!--<td class="w-50">1</td>-->
+                    <!--<td>大门口</td>-->
+                    <!--<td>192.16.11.111</td>-->
+                    <!--<td>admin</td>-->
+                    <!--<td>admin</td>-->
+                    <!--<td>8080</td>-->
+                    <!--<td>海康</td>-->
+                    <!--<td>113.623342</td>-->
+                    <!--<td>23.623342</td>-->
+                    <!--<td>56</td>-->
+                    <!--<td>-->
+                        <!--<a class="fa fa-trash-o"></a>-->
+                        <!--<a class="fa fa-trash-o"></a>-->
+                        <!--<a class="fa fa-trash-o"></a>-->
+                    <!--</td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="page-box">
+        <div id="page"></div>
+    </div>
+
+
+    <!-- 弹出框：新增 -->
+    <div class="modal-box add-modal" style="">
+        <div class="modal-main">
+            <a class="close-btn fa fa-close"></a>
+            <div class="modal-title">新增</div>
+            <div class="content">
+                内容
+            </div>
+            <div class="modal-handler">
+                <a class="confirm">确定</a>
+                <a class="cancel">取消</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="./quote/jquery/jquery-1.11.2.min.js"></script>
+<script src="./quote/layer/layer.js"></script>
+<script src="./quote/jquery-pagination/js/pagination.min.js"></script>
+<script src="./quote/language/jquery.localize.js" type="text/javascript" charset="utf-8"></script>
+<script src="./quote/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="./js/all.js"></script>
+<script src="./js/IPCManage.js"></script>
+
+
+<!--[if lt IE 9]>
+<link href="./css/ie8.css" rel="stylesheet" />
+<script src="./js/ie8.js"></script>
+<![endif]-->
+
+</body>
+</html>
