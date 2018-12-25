@@ -1,0 +1,19 @@
+{
+  "Cmd": "AswGetOnlineUser",
+  "Result": 0,
+  "Message": "查询成功",
+  "Content": [
+    {
+      "UserName": "admin",
+      "UserType": "管理员",
+      "UserIP": "192.168.1.13",
+      "LoginTime": "2018-10-17 14:05:00"
+    },
+    {
+      "UserName": "root1",
+      "UserType": "操作员",
+      "UserIP": "192.168.1.16",
+      "LoginTime": "2018-10-17 12:23:33"
+    }
+  ]
+}

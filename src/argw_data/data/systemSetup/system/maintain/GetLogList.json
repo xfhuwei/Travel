@@ -1,0 +1,32 @@
+{
+  "Cmd": "AswGetLogList",
+  "Result": 0,
+  "Message": "查询成功",
+  "Content": [
+    {
+      "Time":"2018-10-17 00:10:20",
+      "MainType":"操作",
+      "SubType":"远程添加IP通道",
+      "Channel":-1,
+      "User":"admin",
+      "UserIP":"192.168.1.124"
+    },
+    {
+      "Time":"2018-10-17 08:13:20",
+      "MainType":"操作",
+      "SubType":"远程登录",
+      "Channel":-1,
+      "User":"admin",
+      "UserIP":"192.168.1.123"
+    },
+    {
+      "Time":"2018-10-17 08:13:12",
+      "MainType":"操作",
+      "SubType":"远程登录",
+      "Channel":-1,
+      "User":"admin",
+      "UserIP":"192.168.1.124"
+    }
+
+  ]
+}

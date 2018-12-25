@@ -1,0 +1,10 @@
+{
+  "Cmd": "AswAddIPCamera",
+  "Result": 0,
+  "Message": "添加成功",
+  "Content": [
+    {
+      "Channel": 1
+    }
+  ]
+}

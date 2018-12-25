@@ -1,0 +1,49 @@
+{
+  "Cmd": "AswGetIPCameraList",
+  "Result": 0,
+  "Message": "查询成功",
+  "Content": [
+    {
+      "Channel": 1,
+      "ChanName": "大门口",
+      "IP": " 44020000001320013148",
+      "UserName": "admin",
+      "PassWord": "admin",
+      "Port": 5060,
+      "ProtocolType": " GB28181",
+      "Manufacturer": "高新兴",
+      "Longitude": "113.012465",
+      "Latitude": "23.124486",
+      "Altitude": 100,
+      "Status": "不在线"
+    },
+    {
+      "Channel": 2,
+      "ChanName": "道路杆",
+      "IP": "192.168.1.124",
+      "UserName": "admin",
+      "PassWord": "admin12345",
+      "Port": 8000,
+      "ProtocolType": "厂家SDK",
+      "Manufacturer": "海康威视",
+      "Longitude": "113.012465",
+      "Latitude": "23.124486",
+      "Altitude": 100,
+      "Status": "在线"
+    },
+    {
+      "Channel": 3,
+      "ChanName": "道路杆2",
+      "IP": "192.168.1.125",
+      "UserName": "admin",
+      "PassWord": "admin",
+      "Port": 80,
+      "ProtocolType": "ONVIF",
+      "Manufacturer": "大华",
+      "Longitude": "113.012465",
+      "Latitude": "23.124486",
+      "Altitude": 10,
+      "Status": "在线"
+    }
+  ]
+}

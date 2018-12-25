@@ -1,0 +1,155 @@
+.header {
+
+  $H = 50px
+  height $H
+  background $bgColor
+  background-image linear-gradient(to right, #009bfd, #1476e8)
+  box-sizing border-box
+  border-bottom 1px solid #0d71d2
+  .logo {
+    line-height $H
+    height $H
+    float left
+    color #ffffff
+    font-size 22px
+    width 200px
+    text-align center
+    text-shadow 0 0 1px $hoverColor
+    i {
+      iconFn(36px, 7px, url("../img/header/ARlogo.png") no-repeat)
+    }
+    span {
+      position relative
+      top -3px
+    }
+  }
+  .nav {
+    a {
+      float left
+      line-height $H
+      color #ffffff
+      padding 0 15px
+      cursor pointer
+      font-size 16px
+      -webkit-transition: background-color .123s
+      -moz-transition: background-color .123s
+      -ms-transition: background-color .123s
+      -o-transition: background-color .123s
+      transition: background-color .123s
+      &:hover, &.active {
+        background $hoverColor
+        background-image linear-gradient(to bottom, #00479d, #0076dc)
+        i {
+          &.livePreview-icon {
+            background url("../img/header/livePreview_f.png") no-repeat center
+          }
+          &.systemSetup-icon {
+            background url("../img/header/systemSetup_f.png") no-repeat center
+          }
+        }
+      }
+      i {
+        iconFn(24px, 7px, url("../img/header/livePreview.png") no-repeat center)
+        margin-right 8px
+        &.livePreview-icon {
+          background url("../img/header/livePreview.png") no-repeat center
+        }
+        &.systemSetup-icon {
+          background url("../img/header/systemSetup.png") no-repeat center
+        }
+      }
+    }
+  }
+  .right {
+    float right
+    width 120px
+    position relative
+    .user {
+      text-align center
+      line-height $H
+      background #4490EC
+      box-shadow -1px -1px 1px $hoverColor
+      cursor default
+      >i {
+        iconFn(26px, 8px, url("../img/header/admin.png") no-repeat center)
+        margin-right 0
+      }
+      >span {
+        color #ffffff
+        margin-right 3px
+      }
+      >b {
+        color #ffffff
+        position relative
+        top -3px
+      }
+    }
+    .hide-box {
+      display none
+      width 100px
+      padding 10px 0
+      background #ffffff
+      border-radius 5px;
+      position absolute
+      top 40px;
+      left 15px;
+      font-size 12px
+      border 1px solid #ddd
+      box-sizing border-box
+      box-shadow 1px 1px 1px #666
+      z-index 10
+      &:after {
+        content ''
+        position absolute
+        bottom 100%
+        left 83%
+        width 0
+        height 0
+        border 6px solid transparent
+        border-bottom-color #fff
+      }
+      &:before {
+        content ''
+        position absolute
+        bottom 100%
+        left 83%
+        width 0
+        height 0
+        border 7px solid transparent
+        border-bottom-color #aaa
+      }
+      >a {
+        display block
+        text-align center
+        line-height 28px
+        cursor pointer
+        -webkit-transition: background-color .123s
+        -moz-transition: background-color .123s
+        -ms-transition: background-color .123s
+        -o-transition: background-color .123s
+        transition: background-color .123s
+        &:hover {
+          background $hoverColor2
+          color $bgColor
+          >i {
+            &.anew_icon {
+              background url("../img/header/anew_f.png") no-repeat center
+            }
+            &.exit_icon {
+              background url("../img/header/exit_f.png") no-repeat center
+            }
+          }
+        }
+        >i {
+          iconFn(16px, 4px, url("../img/header/anew.png") no-repeat center)
+          &.anew_icon {
+            background url("../img/header/anew.png") no-repeat center
+          }
+          &.exit_icon {
+            background url("../img/header/exit.png") no-repeat center
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+// ipc管理
+.ipc-manage-container {
+  padding 0 15px
+  .title {
+    border-bottom 1px dashed $hoverColor2
+    padding-top 10px
+    margin-bottom 10px
+    >span {
+      line-height 44px
+      font-size 16px
+      >b {
+        display inline-block
+        width 3px
+        height 16px
+        margin-right 6px
+        background $bgColor
+        position relative
+        top 2px
+      }
+    }
+    .handler {
+      float: right
+      margin-top 5px
+      a {
+        margin-left 10px
+        btnFn()
+        &:last-child {
+          btnFn(28px, 15px, #13B357, #139d4f)
+        }
+      }
+    }
+  }
+
+  .table-big-box {
+    position relative
+
+    .table {
+      width 100%
+      th {
+        background-color #e4f8ff
+        font-weight bold
+        border-color #cfdeec
+        //border-right-color transparent
+      }
+      td {
+        text-align center
+        color #666
+        border-color #D6E5F3
+        >a {
+          cursor pointer
+          margin 0 3px
+        }
+      }
+
+      //tbody{
+      //  margin-top 32px
+      //  //display: block;
+      //  //height: 200px;
+      //  //overflow-y: scroll;
+      //}
+      //thead {
+      //  position absolute
+      //  top 0
+      //  left 0
+      //  width 100%
+      //  tr {
+      //    width 100%
+      //  }
+      //}
+
+      tbody>tr {
+        transition background-color .123s
+        cursor default
+        &:hover {
+          background-color $hoverColor2
+        }
+      }
+      .not-check {
+        display inline-block
+        width 10px
+        height 10px
+        border 1px solid #ccc
+        background #fff
+      }
+      .fa-check-square-o {
+        color $color
+      }
+      .w-40 {
+        width 40px
+      }
+      .w-50 {
+        width 50px
+      }
+    }
+
+
+    .scroll-header {
+      position absolute
+      top 0
+      left 0
+      width 100%
+      z-index 1
+    }
+
+  }
+
+
+
+  .page-box {
+    padding 15px 0
+    text-align right
+    #page {
+      width 100%
+
+      .whj_jqueryPaginationCss-1 {
+        width 100%
+        position relative
+        select {
+          float left
+        }
+        .whj_totalSizeSingle {
+          float left
+          position relative
+          margin-left 15px
+        }
+      }
+
+    }
+
+  }
+
+
+  .modal-box {
+    display: none
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background-color rgba(0,0,0,.3)
+    z-index 1000
+    .modal-main {
+      width 500px;
+      height 400px;
+      background-color #fff
+      position absolute
+      top 50%
+      left 50%
+      margin-left -250px
+      margin-top -200px
+      border-radius 3px
+    }
+    .close-btn {
+      position absolute
+      top 0
+      right 0
+      color #999
+      font-size 24px
+      cursor pointer
+      padding 6px 8px
+      &:hover {
+        color $color
+      }
+    }
+    .modal-title {
+      line-height 40px
+      padding-left 15px
+      font-size 15px
+      color #333333
+      border-bottom 1px solid $hoverColor2
+      font-weight bold
+    }
+    .content {
+      height 400 - 82px;
+      overflow-y auto
+    }
+    .modal-handler {
+      height 40px
+      border-top 1px solid $hoverColor2
+      text-align right
+      > a {
+        cursor pointer
+        margin-top 5px
+        margin-right 10px
+        &.confirm {
+          btnFn()
+        }
+        &.cancel {
+          btn2Fn()
+        }
+      }
+    }
+  }
+
+}

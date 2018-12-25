@@ -1,0 +1,91 @@
+// 网络设置
+.setup-net {
+  padding 10px
+  .title {
+    font-size 16px
+    color #333
+    margin-top 5px
+    margin-bottom 20px
+    padding-left 10px
+    >b {
+      display inline-block
+      width 3px
+      height 15px
+      background #0394f9
+      margin-right 10px
+      position relative
+      top 2px
+    }
+  }
+  .item {
+    margin-top 15px
+    color #333
+    label {
+      display inline-block
+      width 120px
+      text-align right
+    }
+    .select {
+      display inline-block
+      margin-right 2.5%
+      width 200px
+      height 30px
+      line-height 28px
+      box-sizing border-box
+      border 1px solid $hoverColor2
+      position relative
+      text-align left
+      cursor pointer
+      border-radius 4px
+      .select-icon {
+        position absolute
+        top 3.5px
+        right 6px
+        z-index -1
+      }
+      .select-result {
+        margin 0 10px;
+        display block
+      }
+      .option-list {
+        width 100%
+        border 1px solid $hoverColor2
+        position absolute
+        top 27px
+        left -1px
+        background #fff
+        display none
+        z-index 1
+        .option-item {
+          line-height 30px
+          padding 0 10px;
+          &:hover {
+            background #eee
+          }
+          &:not(:last-child) {
+            border-bottom 1px solid $hoverColor2
+          }
+
+        }
+      }
+    }
+    >input {
+      width 200px
+      height 30px
+      line-height 28px
+      box-sizing border-box
+      border-radius 4px
+      border 1px solid $hoverColor2
+      margin-right 8px
+      padding 0 10px
+      &.readonly {
+        background #f7faff
+        color #a5b3c7
+      }
+    }
+    .btn {
+      btnFn(30px)
+      margin-top 15px
+    }
+  }
+}

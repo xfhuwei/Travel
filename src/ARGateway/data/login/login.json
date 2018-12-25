@@ -1,8 +1,0 @@
-{
-  "Cmd": "AswLogin",
-  "Result": 0,
-  "Message": "登录成功",
-  "Content": {
-    "Token": "xxxxxxxx12345678"
-  }
-}

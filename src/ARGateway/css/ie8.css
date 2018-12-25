@@ -1,8 +1,0 @@
-.modal-box {
-    /* IE滤镜 */
-    /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);*/
-    background: #666;
-}
-.liulan-btn >input {
-    filter:alpha(opacity=0);
-}

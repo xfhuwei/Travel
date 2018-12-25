@@ -1,0 +1,90 @@
+// 下拉选择框
+from-select() {
+  display inline-block
+  width 200px
+  height 30px
+  line-height 28px
+  box-sizing border-box
+  border 1px solid $hoverColor2
+  position relative
+  text-align left
+  cursor pointer
+  border-radius 4px
+  .select-icon {
+    position absolute
+    top 3.5px
+    right 6px
+    z-index 0
+  }
+  .select-result {
+    margin 0 10px;
+    display block
+  }
+  .option-list {
+    width 100%
+    border 1px solid $hoverColor2
+    position absolute
+    top 27px
+    left -1px
+    background #fff
+    display none
+    z-index 1
+    .option-item {
+      line-height 30px
+      padding 0 10px;
+      &:hover {
+        background #eee
+      }
+      &:not(:last-child) {
+        border-bottom 1px solid $hoverColor2
+      }
+
+    }
+  }
+}
+.from-select {
+  from-select()
+}
+
+// 按钮
+from-btn($h=28px, $p=15px, $bc=$bgColor, $hc=$hoverColor) {
+  display inline-block
+  height $h
+  line-height $h
+  padding 0 $p
+  background-color $bc
+  text-align center
+  color #fff
+  border-radius 4px
+  cursor pointer
+  transition background-color .123s
+  &:hover {
+    background-color $hc
+  }
+}
+.from-btn {
+  from-btn()
+}
+
+// 输入框
+from-input() {
+  width 200px
+  height 30px
+  line-height 30px
+  box-sizing border-box
+  border-radius 4px
+  border 1px solid $hoverColor2
+  margin-right 8px
+  padding 0 10px
+  &.x2 {
+    width 400px
+  }
+  &.readonly {
+    background #f7faff
+    color #a5b3c7
+  }
+}
+.from-input {
+  from-input()
+}
+

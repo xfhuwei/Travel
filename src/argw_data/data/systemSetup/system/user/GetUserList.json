@@ -1,0 +1,22 @@
+{
+  "Cmd": "AswGetUserList",
+  "Result": 0,
+  "Message": "查询成功",
+  "Content": [
+    {
+      "UserName": "admin",
+      "UserType": "管理员",
+      "UserPower": "0x7f"
+    },
+    {
+      "UserName": "root1",
+      "UserType": "操作员",
+      "UserPower": "0x37"
+    },
+    {
+      "UserName": "root2",
+      "UserType": "普通用户",
+      "UserPower": "0x4f"
+    }
+  ]
+}

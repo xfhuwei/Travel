@@ -1,0 +1,14 @@
+{
+  "Cmd": "AswGetNetworkCfg",
+  "Result": 0,
+  "Message": "获取成功",
+  "Content": {
+    "Mode": "静态",
+    "MAC": "00:A1:C3:01:02:2E",
+    "IP": "192.168.1.1",
+    "SubnetMask": "255.255.255.0",
+    "DefaultGateway": "192.168.1.254",
+    "FirstDNS": "192.168.0.7",
+    "SecondDNS": "192.168.0.8"
+  }
+}

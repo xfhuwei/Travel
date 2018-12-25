@@ -1,0 +1,299 @@
+<div class="user-box">
+    <div class="user-nav">
+        <a data-val="system-user-manage" class="">
+            <span data-localize="system.system.user.userManage">用户管理</span>
+            <i></i>
+        </a>
+        <a data-val="system-user-online" class="">
+            <span data-localize="system.system.user.onlineUser">在线用户</span>
+            <i></i>
+        </a>
+    </div>
+
+    <div class="user-main">
+        <div class="manage-main" style="display: none">
+            <div class="title">
+                <b></b>
+                <span data-localize="system.system.user.userList">用户列表</span>
+                <!--<a class="green-btn" id="remove-btn" data-localize="system.system.user.delete">删除</a>-->
+                <a class="from-btn" id="add-btn" data-localize="system.system.user.add">新增</a>
+            </div>
+            <div class="table-big-box">
+                <div class="scroll-header">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <!--<th class="w-40 check-th"><i class="not-check fa "></i></th>-->
+                            <th data-localize="system.system.user.user">用户名</th>
+                            <th data-localize="system.system.user.userType">用户类型</th>
+                            <th data-localize="system.system.user.operation">操作</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-box">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <!--<th class="w-40 check-th"><i class="not-check fa "></i></th>-->
+                            <th data-localize="system.system.user.user">用户名</th>
+                            <th data-localize="system.system.user.userType">用户类型</th>
+                            <th data-localize="system.system.user.operation">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-body">
+                        <tr>
+                            <!--<td class="w-40 check-th"><i class="check-i not-check fa "></i></td>-->
+                            <!--<td>admin</td>-->
+                            <!--<td>123456</td>-->
+                            <!--<td class="lastTd">-->
+                                <!--<a title="删除" class="remove-item-a"></a>-->
+                                <!--<a title="修改权限" class="limits-item-a"></a>-->
+                                <!--<a title="修改密码" class="password-item-a"></a>-->
+                            <!--</td>-->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="page-box">
+                <div id="manage-page"></div>
+            </div>
+
+            <!-- 弹出框：新增 -->
+            <div class="modal-box add-modal" style="display: none">
+                <div class="modal-main">
+                    <a class="close-btn fa fa-close"></a>
+                    <div class="modal-title" data-localize="system.system.user.add">新增</div>
+                    <div class="content">
+                        <div class="item">
+                            <label><span data-localize="system.system.user.user">用户名</span>：</label>
+                            <input id="add-name" class="from-input" type="text" value="">
+                        </div>
+                        <div class="item">
+                            <label><span data-localize="system.system.user.userType">用户类型</span>：</label>
+                            <div class="from-select" id="add-typeSelect">
+                                <i class="select-icon fa fa-sort-down"></i>
+                                <span id="add-utype" class="select-result" data-val="操作员">操作员</span>
+                                <div class="option-list">
+                                  <p class="option-item" data-val="操作员">操作员</p>
+                                  <p class="option-item" data-val="普通用户">普通用户</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <label><span data-localize="system.system.user.adminPwd">管理员密码</span>：</label>
+                            <input id="add-apwd" class="from-input" type="password" value="">
+                        </div>
+                        <div class="item password-item">
+                            <label><span data-localize="system.system.user.pwd">密码</span>：</label>
+                            <input id="add-pwd" class="from-input" type="text" value="">
+                        </div>
+                        <div class="item">
+                            <label></label>
+                            <div class="password-tips">
+                                <p>
+                                    <b><i class="red"></i></b>
+                                    <b class="middle-b"><i class="yellow"></i></b>
+                                    <b><i class="green"></i></b>
+                                    <span>弱</span>
+                                </p>
+                                <div data-localize="system.system.user.pwdTips">8-16位，只能用数字、小写字母、大写字母、特殊字符的两种及以上组合</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <label><span data-localize="system.system.user.pwdConfirm">密码确认</span>：</label>
+                            <input id="add-cpwd" class="from-input" type="text" value="">
+                        </div>
+
+                        <div class="select-panel" id="add-power">
+                            <div class="options-box">
+                                <div class="panel-title">
+                                    <span data-localize="system.system.user.assignablePermission">可分配权限</span>
+                                    <a class="all-checked" data-localize="system.system.user.allAssign">全部分配</a>
+                                </div>
+                                <div class="panel-list panel-kexuan">
+                                  <!--<p class="panel-item" data-val="0x01">重复登录</p>
+                                  &lt;!&ndash;<p class="panel-item" data-val="0x02">用户管理之添加用户，隐含，不用呈现在界面上</p>&ndash;&gt;
+                                  &lt;!&ndash;<p class="panel-item" data-val="0x04">用户管理之权限修改，隐含，不呈现在界面上</p>&ndash;&gt;
+                                  <p class="panel-item" data-val="0x08">云台控制</p>
+                                  <p class="panel-item" data-val="0x10">升级</p>
+                                  <p class="panel-item" data-val="0x20">重启</p>
+                                  <p class="panel-item" data-val="0x40">IPC通道管理（增删改）</p>-->
+                                </div>
+                            </div>
+                            <div class="panel-dire">
+                                <i class="right-icon"></i>
+                                <i class="left-icon"></i>
+                            </div>
+                            <div class="options-box">
+                                <div class="panel-title">
+                                    <span data-localize="system.system.user.assignedAuthority">已分配权限</span>
+                                    <a class="all-checkout" data-localize="system.system.user.allDelete">全部删除</a>
+                                </div>
+                                <div class="panel-list panel-yixuan">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-handler">
+                        <a id="add-confbtn" class="confirm" data-localize="system.system.user.confirm">确定</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 弹出框：修改权限 -->
+            <div class="modal-box limits-modal" style="display: none">
+                <div class="modal-main">
+                    <a class="close-btn fa fa-close"></a>
+                    <div class="modal-title" data-localize="system.system.user.editAssign">修改权限</div>
+                    <div class="content">
+                        <div class="item">
+                            <label><span data-localize="system.system.user.user">用户名</span>：</label>
+                            <input id="power-uname" class="from-input readonly" type="text" value="" readonly="readonly">
+                        </div>
+                        <div class="item">
+                            <label><span data-localize="system.system.user.userType">用户类型</span>：</label>
+                            <div class="from-select" id="userType-select">
+                                <i class="select-icon fa fa-sort-down"></i>
+                                <span id="power-utype" class="select-result" data-val="操作员">操作员</span>
+                                <div class="option-list">
+                                    <p class="option-item" data-val="操作员">操作员</p>
+                                    <p class="option-item" data-val="普通用户">普通用户</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <label><span data-localize="system.system.user.adminPwd">管理员密码</span>：</label>
+                            <input id="power-apwd" class="from-input" type="password" value="">
+                        </div>
+
+                        <div class="select-panel" id="power-power">
+                            <div class="options-box">
+                                <div class="panel-title">
+                                    <span data-localize="system.system.user.assignablePermission">可分配权限</span>
+                                    <a class="all-checked" data-localize="system.system.user.allAssign">全部分配</a>
+                                </div>
+                                <div class="panel-list panel-kexuan">
+
+                                </div>
+                            </div>
+                            <div class="panel-dire">
+                                <i class="right-icon"></i>
+                                <i class="left-icon"></i>
+                            </div>
+                            <div class="options-box">
+                                <div class="panel-title">
+                                    <span data-localize="system.system.user.assignedAuthority">已分配权限</span>
+                                    <a class="all-checkout" data-localize="system.system.user.allDelete">全部删除</a>
+                                </div>
+                                <div class="panel-list panel-yixuan">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-handler">
+                        <a id="power-btn" class="confirm" data-localize="system.system.user.confirm">确定</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 弹出框：修改密码 -->
+            <div class="modal-box password-modal" style="display: none">
+                <div class="modal-main">
+                    <a class="close-btn fa fa-close"></a>
+                    <div class="modal-title" data-localize="system.system.user.eidtPwd">修改密码</div>
+                    <div class="content">
+                        <div class="item">
+                            <label><span data-localize="system.system.user.user">用户名</span>：</label>
+                            <input readonly="readonly" id="edit-username" class="from-input readonly" type="text" value="">
+                        </div>
+                        <div class="item">
+                            <label><span data-localize="system.system.user.adminPwdorold">管理员密码或旧密码</span>：</label>
+                            <input id="edit-oldpwd" class="from-input" type="password" value="">
+                        </div>
+                        <div class="item password-item">
+                            <label><span data-localize="system.system.user.pwd">密码</span>：</label>
+                            <input id="edit-pwd" class="from-input" type="text" value="">
+                        </div>
+                        <div class="item">
+                            <label></label>
+                            <div class="password-tips">
+                                <p>
+                                    <b><i class="red"></i></b>
+                                    <b class="middle-b"><i class="yellow"></i></b>
+                                    <b><i class="green"></i></b>
+                                    <span>弱</span>
+                                </p>
+                                <div data-localize="system.system.user.pwdTips">8-16位，只能用数字、小写字母、大写字母、特殊字符的两种及以上组合</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <label><span data-localize="system.system.user.pwdConfirm">密码确认</span>：</label>
+                            <input id="edit-cpwd" class="from-input" type="text" value="">
+                        </div>
+
+                    </div>
+                    <div class="modal-handler">
+                        <a id="edit-btn" class="confirm" data-localize="system.system.user.confirm">确定</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="online-main" style="display: none">
+            <div class="title">
+                <b></b>
+                <span data-localize="system.system.user.userList">用户列表</span>
+            </div>
+            <div class="table-big-box">
+                <div class="scroll-header">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th data-localize="system.system.user.num">序号</th>
+                            <th data-localize="system.system.user.user">用户名</th>
+                            <th data-localize="system.system.user.userType">用户类型</th>
+                            <th data-localize="system.system.user.ip">IP地址</th>
+                            <th data-localize="system.system.user.userDoTime">用户操作时间</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-box">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th data-localize="system.system.user.num">序号</th>
+                            <th data-localize="system.system.user.user">用户名</th>
+                            <th data-localize="system.system.user.userType">用户类型</th>
+                            <th data-localize="system.system.user.ip">IP地址</th>
+                            <th data-localize="system.system.user.userDoTime">用户操作时间</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            <!--<tr>-->
+                                <!--<td>1</td>-->
+                                <!--<td>admin</td>-->
+                                <!--<td>管理员</td>-->
+                                <!--<td>172.16.11.177</td>-->
+                                <!--<td>2018-10-24 09:34:56</td>-->
+                            <!--</tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="page-box">
+                <div id="online-page"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $.getScript('./js/includes/setup/system/user.js');
+</script>

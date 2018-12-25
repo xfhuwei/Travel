@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>OCXTest</title>
+	<meta name="name" content="text/html; charset=utf-8">
+</head>
+
+<body>
+	<div>
+		<object id="testmmm" WIDTH="1000" HEIGHT="500" CLASSID="CLSID:60FE91B9-D080-4E54-B283-74627B74E503">
+			<!-- <param name="_IPAddr" value="65536">
+            <param name="_Name" value="2619">
+            <param name="_Pswd" value="1164">
+            <param name="_AutoLogin" value="FALSE"> -->
+		</object>
+		<input type="button" name="ddfdfdrv" value="OCX开启播流" onclick="settings();">
+		<input type="button" name="Get_Value" value="OCXGetValue" onclick="GetOcxValue();">
+		<input type="button" name="OCX_Init" value="OCXInit" onclick="OCXInit();">
+		<input type="button" name="OCX_Uninit" value="OCXUninit" onclick="OCXUninit();">
+		</object>
+		<p id = "DebugLogShow"> </p>
+	</div>
+	<!-- <script language="javascript" type="text/javascript" for="testmmm" event="OCX_Test()">
+	alert("gfdgdf");
+	</script> -->
+	<script type="text/javascript" charset="utf-8">
+	function settings() {
+		var test6yr = document.getElementById("testmmm");
+		console.log(test6yr);
+		console.log(test6yr.nSysLogNum);
+		var DebugShow = document.getElementById("DebugLogShow");
+		DebugShow.innerHTML = test6yr.nSysLogNum;
+		test6yr.OCX_Dev_LoginAndPlayVideo("172.16.26.157",36666,140,0,0);
+	}
+	function GetOcxValue() {
+		var test6yr = document.getElementById("testmmm");
+		var DebugShow = document.getElementById("DebugLogShow");
+		DebugShow.innerHTML = test6yr.nSysLogNum;
+		console.log(test6yr.nSysLogNum);//打印出来
+		test6yr.OCX_Server_init("192.168.39.37",6666,"admin","admin");
+	}
+	function OCXInit() {
+		var test6yr = document.getElementById("testmmm");
+		var DebugShow = document.getElementById("DebugLogShow");
+		DebugShow.innerHTML = "The OCXInit return is:"+test6yr.OCX_Init()+"\n";
+	}
+	function OCXUninit() {
+		var test6yr = document.getElementById("testmmm");
+		var DebugShow = document.getElementById("DebugLogShow");
+		DebugShow.innerHTML = "The OCXUninit return is:"+ test6yr.OCX_Uninit()+"\n";
+	}
+	window.onload = function () {
+		var test6yr = document.getElementById("testmmm");
+		console.log(test6yr.OCX_Dev_LoginAndPlayVideo);
+		// test6yr.OCX_TestMethod();
+    GetOcxValue()
+    settings()
+	}
+	</script>
+</body>
+
+</html>

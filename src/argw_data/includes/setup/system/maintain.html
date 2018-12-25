@@ -1,0 +1,161 @@
+<div class="maintain-box">
+    <div class="maintain-nav">
+        <a data-val="system-maintain-upgrade" class="">
+            <span data-localize="system.system.maintain.upgradeMaintenance">升级维护</span>
+            <i></i>
+        </a>
+        <a data-val="system-maintain-log" class="">
+            <span data-localize="system.system.maintain.log">日志</span>
+            <i></i>
+        </a>
+    </div>
+    <div class="maintain-main">
+
+        <div class="upgrade-main" style="display: none">
+            <div class="reset">
+                <div class="title">
+                    <b></b><span data-localize="system.system.maintain.reset">重启</span>
+                </div>
+                <div class="item">
+                    <a class="from-btn" id="reset-system" data-localize="system.system.maintain.reset">重启</a>
+                    <span data-localize="system.system.maintain.resetTips">重新启动设备</span>
+                </div>
+            </div>
+            <div class="upgrade">
+                <div class="title">
+                    <b></b><span data-localize="system.system.maintain.upgrade">升级</span>
+                </div>
+                <div class="item">
+                    <div class="from-select">
+                        <i class="select-icon fa fa-sort-down"></i>
+                        <span class="select-result" data-val="zh" data-localize="system.system.maintain.upgradeFile">升级文件</span>
+                        <div class="option-list">
+                            <p class="option-item" data-val="zh">升级文件</p>
+                        </div>
+                    </div>
+                    <input id="file-name" type="text" readonly="readonly" class="from-input x2" value="">
+                    <from name="from-Upgrade" action="localhost:63342/api/Upgrade" method="post" enctype="multipart/form-data">
+                      <a class="from-btn liulan-btn">
+                          <span data-localize="system.system.maintain.browse">浏览</span>
+                          <input type="file" id="liulan-file" name="FilePath">
+                      </a>
+                      <input name="Token" type="hidden" value="">
+                    </from>
+
+                  <a class="from-btn" id="upgrade-btn" data-localize="system.system.maintain.upgrade">升级</a>
+                </div>
+                <div class="item modal-progress" style="display: none">
+                    <label><span data-localize="system.system.maintain.status">状态</span>：</label>
+                    <div class="progress-box">
+                        <!--进度条-->
+                        <div class="progress">
+                            <span></span>
+                        </div>
+                    </div>
+                    <a class="from-btn" id="quxiao">停止</a>
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.maintain.explain">说明</span>：</label>
+                    <span data-localize="system.system.maintain.upgradeTigs">升级过程需要1-10分钟，请不要关闭电源，完成升级后将自动重启。</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="log-main" style="display: none">
+            <div class="log-handler">
+                <div class="item">
+                    <label><span data-localize="system.system.maintain.mainType">主类型</span>：</label>
+                    <div class="from-select">
+                        <i class="select-icon fa fa-sort-down"></i>
+                        <span id="mainType" class="select-result" data-val="全部类型">全部类型</span>
+                        <div class="option-list">
+                            <p class="option-item" data-val="全部类型">全部类型</p>
+                            <p class="option-item" data-val="报警">报警</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.maintain.subType">次类型</span>：</label>
+                    <div class="from-select">
+                        <i class="select-icon fa fa-sort-down"></i>
+                        <span id="subType" class="select-result" data-val="全部类型">全部类型</span>
+                        <div class="option-list">
+                            <p class="option-item" data-val="全部类型">全部类型</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <label><span data-localize="system.system.maintain.time">时间</span>：</label>
+                    <div class="time-input">
+                        <input placeholder="选择时间" type="text" readonly="readonly"
+                               class="from-input" id="start-date">
+                        <i class="time-icon"></i>
+                    </div>
+                    <span data-localize="system.system.maintain.to">至</span>
+                    <div class="time-input">
+                        <input placeholder="选择时间" type="text" readonly="readonly"
+                               class="from-input" id="end-date">
+                        <i class="time-icon"></i>
+                    </div>
+                    <a class="from-btn" id="inquire-log" data-localize="system.system.maintain.inquire">查询</a>
+                </div>
+            </div>
+            <div class="title">
+                <b></b>
+                <span data-localize="system.system.maintain.logList">日志列表</span>
+                <a class="green-btn" id="derive-log" data-localize="system.system.maintain.export">导出</a>
+            </div>
+            <div class="table-big-box">
+                <div class="scroll-header">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th data-localize="system.system.maintain.number">序号</th>
+                            <th data-localize="system.system.maintain.time">时间</th>
+                            <th data-localize="system.system.maintain.mainType">主类型</th>
+                            <th data-localize="system.system.maintain.subType">次类型</th>
+                            <th data-localize="system.system.maintain.channel">通道号</th>
+                            <th data-localize="system.system.maintain.user">本地/远程用户</th>
+                            <th data-localize="system.system.maintain.hostAddress">远程主机地址</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-box">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>时间</th>
+                            <th>主类型</th>
+                            <th>次类型</th>
+                            <th>通道号</th>
+                            <th>本地/远程用户</th>
+                            <th>远程主机地址</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-body">
+                        <!--<tr>-->
+                            <!--<td>1</td>-->
+                            <!--<td>2018-10-24 00:06:11</td>-->
+                            <!--<td>信息</td>-->
+                            <!--<td>系统运行状态信息</td>-->
+                            <!--<td>2</td>-->
+                            <!--<td>admin</td>-->
+                            <!--<td>10.0.18.88</td>-->
+                        <!--</tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="page-box">
+                <div id="page"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $.getScript('./js/includes/setup/system/maintain.js');
+</script>

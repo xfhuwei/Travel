@@ -1,0 +1,8 @@
+{
+  "Cmd": "AswGetIPCameras",
+  "Result": 0,
+  "Message": "查询成功",
+  "Content": {
+    "Sum": 20
+  }
+}
