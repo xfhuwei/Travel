@@ -6,7 +6,10 @@ import { data } from 'autoprefixer';
     </div>
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id">{{ item.name }}</li>
+        <li @click="handleCityClick(item.name)"
+         class="search-item border-bottom"
+         v-for="item of list"
+         :key="item.id">{{ item.name }}</li>
         <li v-show="hasNoData" class="search-item border-bottom">没有找到匹配数据</li>
       </ul>
     </div>
@@ -26,6 +29,12 @@ export default {
       keyword: '',
       list: [],
       timer: null
+    }
+  },
+   methods: {
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
     }
   },
   computed: {
