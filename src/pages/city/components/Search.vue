@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 <template>
   <div>
     <div class="search">
